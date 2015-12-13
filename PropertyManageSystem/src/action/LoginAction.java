@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+
 @Action (value="loginAction",results={
 		@Result(name="ok",location="/loginsu.jsp"),
 		@Result(name="no",location="/login.jsp")})

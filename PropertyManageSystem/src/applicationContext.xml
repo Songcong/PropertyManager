@@ -18,7 +18,7 @@
 	<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
 	
 	
-	<context:component-scan base-package="action,daoimp,serviceimp"></context:component-scan>
+	<context:component-scan base-package="action,assign,daoimp,serviceimp"></context:component-scan>
 	<bean id="dataSource"
 		class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver">

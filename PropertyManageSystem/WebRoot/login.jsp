@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="/struts-tags" prefix="s" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -23,15 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  	<!-- <script type="text/javascript">
-  			alert("密码或用户名错误请重新输入！！");
-  	</script>-->
-  	${message}
-    <form action="loginAction!login" method="post">
-    <input type="text" name="username" />
-    <input type="text" name="password" />
-    <input type="submit" value="tijaio"/>
-    </form>
-     <br>
+  	${lvm.username}
+  	${lvm.password}
   </body>
 </html>
