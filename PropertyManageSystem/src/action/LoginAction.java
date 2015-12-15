@@ -9,6 +9,8 @@ import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.jasper.tagplugins.jstl.core.Out;
 
 import Model.Login;
+import Model.Userinfo;
+import ViewModel.LoginViewModel;
 import service.LoginService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,54 +22,43 @@ import com.opensymphony.xwork2.ActionSupport;
 
 @Action (value="loginAction",results={
 		@Result(name="ok",location="/loginsu.jsp"),
-		@Result(name="no",location="/login.jsp")})
+		@Result(name="no",type="redirectAction",location="loginAssign?flag=1")})
 @Controller
 public class LoginAction extends ActionSupport {
-	private String username;
-	private String password;
+	private Userinfo userinfo;
 	
-	private String message="";
 	
-	public String getMessage() {
-		return message;
+	public Userinfo getUserinfo() {
+		return userinfo;
 	}
-	public void setMessage(String message) {
-		this.message = message;
+
+
+	public void setUserinfo(Userinfo userinfo) {
+		this.userinfo = userinfo;
 	}
+
+
 	@Resource(name="loginService")
 	private LoginService loginService;
 	
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setLoginService(LoginService loginService) {
+		this.loginService = loginService;
 	}
 	
+	
 	public String login(){
-		message="";
-		Login login = new Login();
-		login.setPassword(password);
-		login.setUsername(username);
-		List<Login> list=loginService.Login(login);
+		
+		
+		List<Userinfo> list=loginService.Login(userinfo);
 	    
 		if(list.size()>0)
 		{
 		return "ok";
 		}
 		else{
-		message="<script>alert('密码或用户名错误请重新输入！！');</script>";
 		return "no";
 		}
 	}
-	public void setLoginService(LoginService loginService) {
-		this.loginService = loginService;
-	}
+	
 
 }

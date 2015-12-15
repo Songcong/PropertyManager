@@ -7,21 +7,26 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import Model.Login;
+import Model.Userinfo;
 import dao.LoginDao;
+import dao.IUserinfoDao;
 import service.LoginService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Service("loginService")
 public class LoginServiceImp implements LoginService {
-	@Resource(name="logindao")
-	private LoginDao logindao;
+	@Resource(name="userinfoDAO")
+	private IUserinfoDao userinfoDAO;
 
-	public List<Login> Login(Login login) {
-		return logindao.Login(login);
+	public void setUserinfoDAO(IUserinfoDao userinfoDAO) {
+		this.userinfoDAO = userinfoDAO;
 	}
 
-	public void setLogindao(LoginDao logindao) {
-		this.logindao = logindao;
+	public List<Userinfo> Login(Userinfo userinfo) {
+		return userinfoDAO.Login(userinfo);
 	}
+
+	
 
 }

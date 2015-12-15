@@ -32,7 +32,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @author MyEclipse Persistence Tools
  */
 @Transactional
-@Repository("logindao")
+
 public class LoginDAOImp implements LoginDao {
 	private static final Logger log = LoggerFactory.getLogger(LoginDAOImp.class);
 	// property constants
@@ -40,7 +40,6 @@ public class LoginDAOImp implements LoginDao {
 	public static final String PASSWORD = "password";
 
 	
-	@Resource(name = "sessionFactory")
 	private SessionFactory sessionFactory;
 
 	public void setSessionFactory(SessionFactory sessionFactory) {

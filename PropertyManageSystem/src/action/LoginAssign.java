@@ -1,6 +1,7 @@
 package action;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.struts2.convention.annotation.Action;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import com.opensymphony.xwork2.ActionSupport;
 
 import Model.Login;
+import Model.Userinfo;
 import Utilx.ViewStringSet;
 import ViewModel.LoginViewModel;
 
@@ -21,7 +23,15 @@ public class LoginAssign extends ActionSupport{
 		private List<String> list;
 		private Field[] fields;
 		private LoginViewModel lvm;
+		private  int flag;
 			
+		
+		public int getFlag() {
+			return flag;
+		}
+		public void setFlag(int flag) {
+			this.flag = flag;
+		}
 		public LoginViewModel getLvm() {
 			return lvm;
 		}
@@ -44,25 +54,37 @@ public class LoginAssign extends ActionSupport{
 		public String execute() throws IllegalArgumentException, IllegalAccessException{
 			
 			LoginViewModel loginViewModel = new LoginViewModel();
-			Login login = new Login();
+			Userinfo userinfo =new Userinfo();
 			
-			login.setPassword("sajkdljal");
-			login.setUsername("sadasd");
-			ViewStringSet viewStringSet = new ViewStringSet(login, loginViewModel);
+
+			ViewStringSet viewStringSet = new ViewStringSet(userinfo, loginViewModel);
 			
 			loginViewModel.setHeader("<header>");
 			loginViewModel.setFooter("<footer>");
+			loginViewModel.setAction("loginAction!login");
 			loginViewModel.setUsername("用户名：");
 			loginViewModel.setPassword("密码：");
 			
-			//loginViewModel=(LoginViewModel) viewStringSet.Addset();
 			
-			loginViewModel=(LoginViewModel) viewStringSet.updateset();
+			List<Object> list=new ArrayList<Object>();
+			
+			
+			loginViewModel=(LoginViewModel) viewStringSet.Addset();
+			
+			//loginViewModel=(LoginViewModel) viewStringSet.updateset();
+			//loginViewModel=(LoginViewModel) viewStringSet.listSet(list);
 			
 			lvm=loginViewModel;
 			
 			//fields = loginViewModel.getClass().getDeclaredFields();
 			
+			if(flag==1)
+			{
+				loginViewModel.setMessage("<script>alert('密码或用户名错误请重新输入！！');</script>");
+			}
+			else{
+				loginViewModel.setMessage("");
+			}
 			
 			return "ok";
 		}

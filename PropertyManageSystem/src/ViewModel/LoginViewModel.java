@@ -28,18 +28,40 @@ public class LoginViewModel {
 	}
 	
 	
+	public String getAction() {
+		return action;
+	}
+	public void setAction(String action) {
+		this.action = action;
+	}
+	public String getList() {
+		return list;
+	}
+	public void setList(String list) {
+		this.list = list;
+	}
 	
-	
-	
+
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+
+	private String message; 
+
 	private String header;
 	private String footer;
-	private String form;
-	public String getForm() {
-		return form;
-	}
-	public void setForm(String form) {
-		this.form = form;
-	}
+	private String action;
+	private String list;
+
+
+
+
+
+	
 
 
 

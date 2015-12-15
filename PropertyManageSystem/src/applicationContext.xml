@@ -24,7 +24,7 @@
 		<property name="driverClassName" value="com.mysql.jdbc.Driver">
 		</property>
 		<property name="url"
-			value="jdbc:mysql://localhost:3306/shxt_t?characterEncoding=utf-8">
+			value="jdbc:mysql://localhost:3306/wygl?characterEncoding=utf-8">
 		</property>
 		<property name="username" value="root"></property>
 	</bean>
@@ -42,8 +42,10 @@
 		</property>
 		<property name="annotatedClasses">
 			<list>
-				<value>Model.Login</value></list>
-		</property></bean>
+				<value>Model.Login</value>
+				<value>Model.Userinfo</value></list>
+		</property>
+		</bean>
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
@@ -52,4 +54,5 @@
 	<tx:annotation-driven transaction-manager="transactionManager" />
 	
 	
-</beans>
+	
+	</beans>

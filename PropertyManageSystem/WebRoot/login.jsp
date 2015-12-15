@@ -24,7 +24,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+    ${lvm.message}
+  	<form action="${lvm.action}" method="post">
   	${lvm.username}
   	${lvm.password}
+  	${lvm.list}
+  	<input type="submit" value="提交"/>
+  	</form>
   </body>
 </html>
