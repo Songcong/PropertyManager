@@ -19,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import dao.IUserinfoDao;
 import Model.Userinfo;
+import Utilx.DBUtil;
 
 /**
  * A data access object (DAO) providing persistence and search support for
@@ -82,7 +83,6 @@ public class UserinfoDAO implements IUserinfoDao {
 			throw re;
 		}
 	}
-
 	public Userinfo findById(java.lang.Integer id) {
 		log.debug("getting Userinfo instance with id: " + id);
 		try {
@@ -215,6 +215,14 @@ public class UserinfoDAO implements IUserinfoDao {
 		 Query query = this.getCurrentSession().createQuery("from Userinfo where username='"+userinfo.getUsername()+"' and password='"+userinfo.getPassword()+"'");
 		 List find =query.list();
 		return find;
+	}
+	
+	public void deletebyid(int id){
+		DBUtil db=new DBUtil();
+		
+		String sql="delete from Userinfo where userid="+id;
+		db.update(sql);
+		
 	}
 	
 }

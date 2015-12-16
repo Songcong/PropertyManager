@@ -15,15 +15,23 @@ import javax.persistence.Table;
 public class Userinfo implements java.io.Serializable {
 
 	// Fields
-
+	@Label("用户号")
 	private Integer userid;
+	@Label("用户名")
 	private String username;
+	@Label("密码")
 	private String password;
+	@Label("真名")
 	private String realname;
+	@Label("性别")
 	private String sex;
+	@Label("电话")
 	private String telnumber;
+	@Label("邮箱")
 	private String email;
+	@Label("地址")
 	private String address;
+	@Label("标记")
 	private String tag;
 
 	// Constructors

@@ -1,5 +1,6 @@
 package Utilx;
 
+import java.beans.IntrospectionException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +9,7 @@ import Model.Userinfo;
 import ViewModel.LoginViewModel;
 
 public class Test {
-	public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException, SecurityException, NoSuchFieldException {
+	public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException, SecurityException, NoSuchFieldException, IntrospectionException {
 		
 		LoginViewModel loginViewModel = new LoginViewModel();
 		Userinfo userinfo = new Userinfo();
@@ -19,11 +20,11 @@ public class Test {
 		userinfo.setAddress("sad");
 		ViewStringSet viewStringSet = new ViewStringSet(userinfo, loginViewModel);
 		List<Object> list=new ArrayList<Object>();
-		list.add(userinfo);
+//		list.add(userinfo);
 //		loginViewModel.viewclass.setHeader("sadsad");
 //		loginViewModel=(LoginViewModel) viewStringSet.Addset();
-		String s=viewStringSet.listSet(list);
-//		loginViewModel=(LoginViewModel) viewStringSet.updateset();
+//		String s=viewStringSet.listSet(list);
+		String s= viewStringSet.updateset();
 		//System.out.println(loginViewModel.getUsername()+loginViewModel.getPassword()+loginViewModel.viewclass.getHeader());
 		System.out.println(s);
 		

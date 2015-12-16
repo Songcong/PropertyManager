@@ -70,8 +70,8 @@ public class SQLstringset {
 		String	sqlupdate="update "+sqltable+" set "+sqlv+" "+where; 
 		
 		return sqlupdate;
-		
 	}
+	
 	
 
 }

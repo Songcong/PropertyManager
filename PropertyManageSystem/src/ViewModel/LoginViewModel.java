@@ -19,8 +19,16 @@ public class LoginViewModel {
 //		viewclass=new ViewClass();
 		this.viewclass=viewclass;
 	}
+	private String input;
 	
-	
+	public String getInput() {
+		return input;
+	}
+
+
+	public void setInput(String input) {
+		this.input = input;
+	}
 	private String userid;
 	private String username;
 	private String password;

@@ -1,5 +1,7 @@
 package serviceimp;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -24,5 +26,11 @@ public class RegisterService implements IRegisterService {
 	public Userinfo edit(int id){
 		return userinfoDAO.findById(id);
 	}
-	
+	public List findall(){
+		
+		return	userinfoDAO.findAll();
+	}
+	public void deletebyid(int id){
+		userinfoDAO.deletebyid(id);
+	}
 }

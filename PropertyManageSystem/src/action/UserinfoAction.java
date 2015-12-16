@@ -12,8 +12,7 @@ import Model.Userinfo;
 import com.opensymphony.xwork2.ActionSupport;
 
 @Action (value="userinfoAction",results={
-		@Result(name="add",location="/register.jsp"),
-		@Result(name="no",type="redirectAction",location="loginAssign?flag=1"),
+		@Result(name="list",type="redirectAction",location="userinfoAssign!list"),
 		@Result(name="suc",location="/index.jsp")
 		})
 		
@@ -26,9 +25,16 @@ public class UserinfoAction extends ActionSupport {
 		public void setRegisterService(IRegisterService registerService) {
 			this.registerService = registerService;
 		}
+		private String userid;
 
 
+		public String getUserid() {
+			return userid;
+		}
 
+		public void setUserid(String userid) {
+			this.userid = userid;
+		}
 		private Userinfo userinfo;
 
 		public Userinfo getUserinfo() {
@@ -43,6 +49,14 @@ public class UserinfoAction extends ActionSupport {
 		
 		public String add(){
 			registerService.register(userinfo);
-			return "suc";
+			return "list";
+		}
+		public String edit(){
+			registerService.register(userinfo);
+			return "list";
+		}
+		public String delete(){
+			registerService.deletebyid(Integer.parseInt(userid));
+			return "list";
 		}
 }

@@ -42,6 +42,35 @@ public class RegisterorEditViewModel {
 
 
 
+	public RegisterorEditViewModel() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+
+	public String list;
+
+	public String getList() {
+		return list;
+	}
+	public void setList(String list) {
+		this.list = list;
+	}
+
+
+	private String input;
+
+	public String getInput() {
+		return input;
+	}
+	public void setInput(String input) {
+		this.input = input;
+	}
+
+
+
+
 	//datamodel
 	private String userid;
 	private String username;

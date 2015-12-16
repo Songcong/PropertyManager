@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 /**
  * 鏁版嵁搴撳伐鍏风被
 * @Title: DBUtil.java 
@@ -23,7 +24,7 @@ import java.util.Map;
 public class DBUtil {
 	
 		//杩炴帴鏁版嵁搴撶殑URL
-		private String url="jdbc:mysql://localhost:3306/shxt_t";
+		private String url="jdbc:mysql://localhost:3306/wygl";
 
 		//鏁版嵁搴撳悕
 		private String username="root";
@@ -273,5 +274,7 @@ public class DBUtil {
 				}
 			 }
 		 }
+		 
+		 
 		
 }

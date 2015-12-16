@@ -23,5 +23,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
      <a href="loginAssign" >aldkj</a><br>
+     <a href="userinfoAssign!list">查看信息</a>
   </body>
 </html>

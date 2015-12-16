@@ -69,7 +69,7 @@ public class LoginAssign extends ActionSupport{
 			List<Object> list=new ArrayList<Object>();
 			
 			
-			loginViewModel=(LoginViewModel) viewStringSet.Addset();
+			loginViewModel.setInput(viewStringSet.Addset());
 			
 			//loginViewModel=(LoginViewModel) viewStringSet.updateset();
 			//loginViewModel=(LoginViewModel) viewStringSet.listSet(list);

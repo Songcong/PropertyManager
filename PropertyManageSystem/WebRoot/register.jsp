@@ -20,7 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 	<style type="text/css">
-		#userid,#tag{
+		.userid,.tag{
 			display: none;		
 		}
 	</style>
@@ -28,15 +28,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <form action="${revm.viewclass.action}" method="post">
-    	${revm.userid}
-    	${revm.username}
-    	${revm.password}
-    	${revm.realname}
-		${revm.sex}
-		${revm.telnumber}
-		${revm.email}
-		${revm.address}
-		${revm.tag}
+		${revm.input}
 		<input type="submit" value="提交"/>
     </form>
   </body>

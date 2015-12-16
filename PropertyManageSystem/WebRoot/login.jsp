@@ -20,17 +20,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
+	<style type="text/css">
+		.userid,.tag,.telnumber,.realname,.email,.address,.sex{
+			display: none;		
+		}
+	</style>
   </head>
-  
+  	
   <body>
   	${lvm.viewclass.header}
     ${lvm.viewclass.message}
   	<form action="${lvm.viewclass.action}" method="post">
-  	${lvm.username}
-  	${lvm.password}
+  	${lvm.input}
   	<input type="submit" value="提交"/>
-  	<a href="<s:url action="registeroreditassign!register"/>"><input type="button"  value="注册"></a>
+  	<a href="<s:url action="userinfoAssign!register"/>"><input type="button"  value="注册"></a>
   	</form>
   </body>
 </html>

@@ -43,7 +43,13 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>Model.Login</value>
-				<value>Model.Userinfo</value></list>
+				<value>Model.Userinfo</value>
+				<value>Model.Car</value>
+				<value>Model.Carmanage</value>
+				<value>Model.Charstan</value>
+				<value>Model.Expdetail</value>
+				<value>Model.Expensetype</value>
+				<value>Model.Stall</value></list>
 		</property>
 		</bean>
 	<bean id="transactionManager"
@@ -55,4 +61,33 @@
 	
 	
 	
-	</beans>
+	<bean id="CarDAO" class="daoimp.CarDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="CarmanageDAO" class="daoimp.CarmanageDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="CharstanDAO" class="daoimp.CharstanDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ExpdetailDAO" class="daoimp.ExpdetailDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ExpensetypeDAO" class="daoimp.ExpensetypeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="StallDAO" class="daoimp.StallDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean></beans>
