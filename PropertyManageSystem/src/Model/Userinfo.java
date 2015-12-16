@@ -53,7 +53,7 @@ public class Userinfo implements java.io.Serializable {
 	public Integer getUserid() {
 		return this.userid;
 	}
-
+	
 	public void setUserid(Integer userid) {
 		this.userid = userid;
 	}

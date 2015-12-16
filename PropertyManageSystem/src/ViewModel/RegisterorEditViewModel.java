@@ -6,26 +6,44 @@ public class RegisterorEditViewModel {
 	
 	
 	
-	private String header;
-	private String footer;
+	public ViewClass viewclass;
+	public ViewClass getViewclass() {
+		return viewclass;
+	}
+	public void setViewclass(ViewClass viewclass) {
+//		viewclass=new ViewClass();
+		this.viewclass=viewclass;
+	}
+	
+	
+	
+	
+	
+	
+	
+	public RegisterorEditViewModel(String userid, String username,
+			String password, String realname, String sex, String telnumber,
+			String email, String address, String tag) {
+		super();
+		this.userid = userid;
+		this.username = username;
+		this.password = password;
+		this.realname = realname;
+		this.sex = sex;
+		this.telnumber = telnumber;
+		this.email = email;
+		this.address = address;
+		this.tag = tag;
+	}
 
-	public String getHeader() {
-		return header;
-	}
-	public void setHeader(String header) {
-		this.header = header;
-	}
-	public String getFooter() {
-		return footer;
-	}
-	public void setFooter(String footer) {
-		this.footer = footer;
-	}
-	
-	
-	
+
+
+
+
+
+
 	//datamodel
-	private Integer userid;
+	private String userid;
 	private String username;
 	private String password;
 	private String realname;
@@ -34,10 +52,10 @@ public class RegisterorEditViewModel {
 	private String email;
 	private String address;
 	private String tag;
-	public Integer getUserid() {
+	public String getUserid() {
 		return userid;
 	}
-	public void setUserid(Integer userid) {
+	public void setUserid(String userid) {
 		this.userid = userid;
 	}
 	public String getUsername() {

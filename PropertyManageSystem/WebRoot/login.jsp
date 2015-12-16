@@ -24,12 +24,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    ${lvm.message}
-  	<form action="${lvm.action}" method="post">
+  	${lvm.viewclass.header}
+    ${lvm.viewclass.message}
+  	<form action="${lvm.viewclass.action}" method="post">
   	${lvm.username}
   	${lvm.password}
-  	${lvm.list}
   	<input type="submit" value="提交"/>
+  	<a href="<s:url action="registeroreditassign!register"/>"><input type="button"  value="注册"></a>
   	</form>
   </body>
 </html>

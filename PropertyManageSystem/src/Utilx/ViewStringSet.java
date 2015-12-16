@@ -1,6 +1,9 @@
 package Utilx;
 
+import java.beans.PropertyDescriptor;
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.List;
 
 public class ViewStringSet {
@@ -22,13 +25,17 @@ public class ViewStringSet {
 	}
 
 	public Object Addset() throws IllegalArgumentException,
-			IllegalAccessException {
-		
-		String table = datamodel.getClass().getSimpleName();
-		table=table.substring(0,1).toLowerCase()+table.substring(1,table.length());
-		Field[] datafields = datamodel.getClass().getDeclaredFields();
-		Field[] viewfields = viewmodel.getClass().getDeclaredFields();
+			IllegalAccessException, NoSuchFieldException, SecurityException {
 
+		String table = datamodel.getClass().getSimpleName();
+		table = table.substring(0, 1).toLowerCase()
+				+ table.substring(1, table.length());
+		Field[] datafields = datamodel.getClass().getDeclaredFields();
+//		Field field = viewmodel.getClass().getField("datamodel");
+//		field.setAccessible(true);
+//		Object object = field.get(viewmodel);
+//		Field[] viewfields = object.getClass().getDeclaredFields();
+		Field[] viewfields = viewmodel.getClass().getDeclaredFields();
 		for (Field vfield : viewfields) {
 			for (Field dfield : datafields) {
 				vfield.setAccessible(true);
@@ -39,8 +46,8 @@ public class ViewStringSet {
 					String label = (String) vfield.get(viewmodel);
 					vfield.set(viewmodel, "<label for='" + fieldname + "'>"
 							+ label + "</label>" + "<input type='text' name='"
-							+ table+"."+fieldname + "' value='' />\n");
-					
+							+ table + "." + fieldname + "' id='"+fieldname+"' value='' />\n");
+
 				}
 			}
 		}
@@ -49,7 +56,7 @@ public class ViewStringSet {
 	}
 
 	public Object updateset() throws IllegalArgumentException,
-			IllegalAccessException {
+			IllegalAccessException, SecurityException, NoSuchFieldException {
 
 		Field[] datafields = datamodel.getClass().getDeclaredFields();
 		Field[] viewfields = viewmodel.getClass().getDeclaredFields();
@@ -65,7 +72,8 @@ public class ViewStringSet {
 					String label = (String) vfield.get(viewmodel);
 					vfield.set(viewmodel, "<label for='" + fieldname + "'>"
 							+ label + "</label>" + "<input type='text' name='"
-							+ fieldname + "' id='"+fieldname+"' value='" + fieldvalue + "' />\n");
+							+ fieldname + "' id='" + fieldname + "' value='"
+							+ fieldvalue + "' />\n");
 				}
 			}
 		}
@@ -73,54 +81,54 @@ public class ViewStringSet {
 		return viewmodel;
 	}
 
-	public Object listSet(List<Object> list) throws IllegalArgumentException,
+	public String listSet(List<Object> list) throws IllegalArgumentException,
 			IllegalAccessException {
 
 		String ths = "";
-		String trs="";
+		String trs = "";
 		for (Object object : list) {
 			String th = "";
-			String td="";
+			String td = "";
 			Field[] datafields = object.getClass().getDeclaredFields();
-			
-			
+			String id = "";
+			String idvalue="";
 			for (Field dfield : datafields) {
 				
 				dfield.setAccessible(true);
 				
-					String fieldname = dfield.getName();
-					String fieldvalue = (String) dfield.get(object);
-					td+="<td class='"+fieldname+"'>" + fieldvalue + "</td>";
+				
+				String fieldname = dfield.getName();
+				String fieldvalue =  dfield.get(object).toString();
+				
+				
+				PropertyDescriptor pd = new PropertyDescriptor(dfield.getName(), clazz);  
+				Method getMethod = pd.getReadMethod();
+				get
 
-					th += "<th>" + fieldname + "</th>";
-
+				for (Annotation annotation : annotations) {
+					if("Id".equalsIgnoreCase(annotation.getClass().getName())){
+						id=fieldname;
+						idvalue=fieldvalue;
+					}
 				}
-			
-			td="<tr>"+td+"</tr>";
-			th="<tr>"+th+"</tr>";
-			
-			trs+=td;
-			ths=th;
+				td += "<td class='" + fieldname + "'>" + fieldvalue + "</td>";
+
+				th += "<th>" + fieldname + "</th>";
+
 			}
-		
-		String lists=ths+trs;
 
-		try {
-			
-			Field field = viewmodel.getClass().getDeclaredField("list");
-			field.setAccessible(true);
+			td = "<tr>" + td + "<td><a class='edit' id=''></a></td><td><a class='delete' id=''></a></td></tr>";
+			th = "<tr>" + th + "</tr>";
 
-			field.set(viewmodel, lists);
-
-		} catch (NoSuchFieldException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SecurityException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			trs += td;
+			ths = th;
 		}
 
-		return viewmodel;
+		String lists = ths + trs;
+
+		
+
+		return lists;
 	}
 
 }

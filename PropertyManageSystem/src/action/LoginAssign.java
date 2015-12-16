@@ -51,7 +51,7 @@ public class LoginAssign extends ActionSupport{
 			this.fields = fields;
 		}
 
-		public String execute() throws IllegalArgumentException, IllegalAccessException{
+		public String execute() throws IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException{
 			
 			LoginViewModel loginViewModel = new LoginViewModel();
 			Userinfo userinfo =new Userinfo();
@@ -59,9 +59,9 @@ public class LoginAssign extends ActionSupport{
 
 			ViewStringSet viewStringSet = new ViewStringSet(userinfo, loginViewModel);
 			
-			loginViewModel.setHeader("<header>");
-			loginViewModel.setFooter("<footer>");
-			loginViewModel.setAction("loginAction!login");
+			loginViewModel.viewclass.setHeader("<header>");
+			loginViewModel.viewclass.setFooter("<footer>");
+			loginViewModel.viewclass.setAction("loginAction!login");
 			loginViewModel.setUsername("用户名：");
 			loginViewModel.setPassword("密码：");
 			
@@ -80,10 +80,10 @@ public class LoginAssign extends ActionSupport{
 			
 			if(flag==1)
 			{
-				loginViewModel.setMessage("<script>alert('密码或用户名错误请重新输入！！');</script>");
+				loginViewModel.viewclass.setMessage("<script>alert('密码或用户名错误请重新输入！！');</script>");
 			}
 			else{
-				loginViewModel.setMessage("");
+				loginViewModel.viewclass.setMessage("");
 			}
 			
 			return "ok";
