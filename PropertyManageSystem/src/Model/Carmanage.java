@@ -16,7 +16,7 @@ import javax.persistence.Table;
 public class Carmanage implements java.io.Serializable {
 
 	// Fields
-
+	
 	private Integer carmanageid;
 	private String carid;
 	private Timestamp parttime;

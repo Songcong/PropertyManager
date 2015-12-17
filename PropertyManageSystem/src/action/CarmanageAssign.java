@@ -10,6 +10,7 @@ import org.apache.struts2.convention.annotation.Result;
 import org.springframework.stereotype.Controller;
 
 import service.ICarService;
+import service.ICarmanageService;
 import Model.Carmanage;
 import Utilx.ViewStringSet;
 import ViewModel.CarmanageViewModel;
@@ -17,7 +18,7 @@ import ViewModel.ViewClass;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class CarmanageAssign {
+
 
 	@Action (value="carmanageAssign",results={
 			@Result(name="add",location="/Carmanageaddoredit.jsp"),
@@ -28,7 +29,7 @@ public class CarmanageAssign {
 		
 		private CarmanageViewModel cvm;
 		
-		 private String carmanageId;
+		 private String carmanageid;
 		 
 		 @Resource(name = "carmanageService")
 		private ICarmanageService carmanageService;
@@ -43,30 +44,30 @@ public class CarmanageAssign {
 			this.cvm = cvm;
 		}
 
-		public String getCarmanageId() {
-			return carId;
+		public String getCarmanageid() {
+			return carmanageid;
 		}
 
-		public void setCarmanageId(String carId) {
-			this.carId = carId;
+		public void setCarmanageid(String carmanageId) {
+			this.carmanageid = carmanageId;
 		}
 
 		
 		
 		public String add(){
-			CarmanageViewModel carViewModel=new CarmanageViewModel();
+			CarmanageViewModel carmanageViewModel=new CarmanageViewModel();
 			
-			Carmanage car = new Carmanage();
+			Carmanage carmanage = new Carmanage();
 			
 			ViewClass vc=new ViewClass();
-			 vc.action="CarmanageAction!add";
-			 carViewModel.viewClass=vc;
+			 vc.action="carmanageAction!add";
+			 carmanageViewModel.viewClass=vc;
 			
-			ViewStringSet viewStringSet = new ViewStringSet(car);
+			ViewStringSet viewStringSet = new ViewStringSet(carmanage);
 			
-			carViewModel.setInput(viewStringSet.Addset());
+			carmanageViewModel.setInput(viewStringSet.Addset());
 			
-			cvm = carViewModel;
+			cvm = carmanageViewModel;
 			
 			
 			return "add";
@@ -75,19 +76,19 @@ public class CarmanageAssign {
 		
 		public String edit(){
 			
-			CarViewModel carViewModel=new CarViewModel();
+			CarmanageViewModel carmanageViewModel=new CarmanageViewModel();
 			
-			Car car = carService.edit(Integer.parseInt(carId));
+			Carmanage carmanagemanage = carmanageService.edit(Integer.parseInt(carmanageid));
 			
 			ViewClass vc=new ViewClass();
-			 vc.action="carAction!edit";
-			 carViewModel.viewClass=vc;
+			 vc.action="carmanageAction!edit";
+			 carmanageViewModel.viewClass=vc;
 			
-			ViewStringSet viewStringSet = new ViewStringSet(car);
+			ViewStringSet viewStringSet = new ViewStringSet(carmanagemanage);
 			
-			carViewModel.setInput(viewStringSet.updateset());
+			carmanageViewModel.setInput(viewStringSet.updateset());
 			
-			cvm = carViewModel;
+			cvm = carmanageViewModel;
 			
 			
 			return "edit";
@@ -96,17 +97,18 @@ public class CarmanageAssign {
 		
 		public String list() throws IllegalArgumentException, IllegalAccessException, IntrospectionException{
 			
-			 CarViewModel carViewModel=new CarViewModel();
+			CarmanageViewModel carmanageViewModel=new CarmanageViewModel();
 			
-			 list = carService.findall();
+			 list = carmanageService.findall();
 			 
 			 ViewStringSet viewStringSet = new ViewStringSet();
 				
-				carViewModel.setList(viewStringSet.listSet(list));
+			 carmanageViewModel.setList(viewStringSet.listSet(list));
 				
-				cvm = carViewModel;
+				cvm = carmanageViewModel;
 				
 				
 				return "list";
 		}
 }
+

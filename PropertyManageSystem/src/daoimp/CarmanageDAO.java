@@ -187,7 +187,7 @@ public class CarmanageDAO implements ICarmanageDao {
 	public void deletebyid(int id){
 		DBUtil db=new DBUtil();
 		
-		String sql="delete from Userinfo where carmanageid="+id;
+		String sql="delete from  Carmanage where carmanageid="+id;
 		db.update(sql);
 		
 	}
