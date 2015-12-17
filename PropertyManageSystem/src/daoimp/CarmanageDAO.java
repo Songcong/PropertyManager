@@ -13,11 +13,13 @@ import static org.hibernate.criterion.Example.create;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import dao.ICarmanageDao;
 import Model.Carmanage;
 import Utilx.DBUtil;
+import javax.annotation.Resource;
 
 /**
  * A data access object (DAO) providing persistence and search support for
@@ -31,6 +33,7 @@ import Utilx.DBUtil;
  * @author MyEclipse Persistence Tools
  */
 @Transactional
+@Repository("carmanageDAO")
 public class CarmanageDAO implements ICarmanageDao {
 	private static final Logger log = LoggerFactory
 			.getLogger(CarmanageDAO.class);
@@ -39,6 +42,7 @@ public class CarmanageDAO implements ICarmanageDao {
 	public static final String COST = "cost";
 	public static final String PARTID = "partid";
 
+	@Resource(name = "sessionFactory")
 	private SessionFactory sessionFactory;
 
 	public void setSessionFactory(SessionFactory sessionFactory) {

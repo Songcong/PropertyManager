@@ -46,16 +46,14 @@ public class RegisterorEditAssign extends ActionSupport{
 
 	public String register() throws IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException{
 		
-		  RegisterorEditViewModel registerorEditViewModel = new RegisterorEditViewModel(
-				  "","用户名","密码","真实姓名","性别","电话号码","邮箱","地址",""
-				  ); 
+		  RegisterorEditViewModel registerorEditViewModel = new RegisterorEditViewModel(); 
 		  Userinfo userinfo = new Userinfo();
 		  
 		  ViewClass vc=new ViewClass();
 		  vc.action="userinfoAction!add";
 		  registerorEditViewModel.viewclass=vc;
 		  
-		  ViewStringSet viewStringSet = new ViewStringSet(userinfo,registerorEditViewModel);
+		  ViewStringSet viewStringSet = new ViewStringSet(userinfo);
 		  
 		  registerorEditViewModel.setInput(viewStringSet.Addset());
 		  this.revm=registerorEditViewModel;
@@ -63,16 +61,15 @@ public class RegisterorEditAssign extends ActionSupport{
 		  
 	}
 	public String edit() throws IllegalArgumentException, IllegalAccessException, SecurityException, NoSuchFieldException{
-		RegisterorEditViewModel registerorEditViewModel = new RegisterorEditViewModel(
-				  "","用户名","密码","真实姓名","性别","电话号码","邮箱","地址",""
-				  );
+		RegisterorEditViewModel registerorEditViewModel = new RegisterorEditViewModel();
+
 		Userinfo userinfo = registerService.edit(Integer.parseInt(userid));
 		  
 		  ViewClass vc=new ViewClass();
 		  vc.action="userinfoAction!edit";
 		  registerorEditViewModel.viewclass=vc;
 		  
-		  ViewStringSet viewStringSet = new ViewStringSet(userinfo,registerorEditViewModel);
+		  ViewStringSet viewStringSet = new ViewStringSet(userinfo);
 		  
 		  registerorEditViewModel.setInput(viewStringSet.updateset());
 		  this.revm=registerorEditViewModel;
@@ -81,7 +78,6 @@ public class RegisterorEditAssign extends ActionSupport{
 	}
 	public String list() throws IllegalArgumentException, IllegalAccessException, IntrospectionException{
 		RegisterorEditViewModel registerorEditViewModel = new RegisterorEditViewModel(); 
-		Userinfo userinfo = new Userinfo();
 		  
 		  ViewClass vc=new ViewClass();
 		  vc.header="sadas";

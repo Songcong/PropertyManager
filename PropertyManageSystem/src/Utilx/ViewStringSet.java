@@ -13,9 +13,8 @@ public class ViewStringSet {
 	private Object datamodel;
 	private Object viewmodel;
 
-	public ViewStringSet(Object datamodel, Object viewmodel) {
+	public ViewStringSet(Object datamodel) {
 		this.datamodel = datamodel;
-		this.viewmodel = viewmodel;
 	}
 
 	public ViewStringSet() {

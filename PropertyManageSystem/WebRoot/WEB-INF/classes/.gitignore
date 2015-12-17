@@ -1,8 +1,8 @@
+/Model/
 /Utilx/
+/ViewModel/
 /action/
 /dao/
-/serviceimp/
-/service/
-/ViewModel/
 /daoimp/
-/Model/
+/service/
+/serviceimp/

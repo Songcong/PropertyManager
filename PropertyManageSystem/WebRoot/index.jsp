@@ -24,5 +24,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
      <a href="loginAssign" >aldkj</a><br>
      <a href="userinfoAssign!list">查看信息</a>
+     <a href="carAssign!list">查看车辆信息</a>
   </body>
 </html>

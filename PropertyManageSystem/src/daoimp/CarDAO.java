@@ -2,6 +2,8 @@ package daoimp;
 
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.hibernate.LockOptions;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -12,6 +14,7 @@ import static org.hibernate.criterion.Example.create;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import dao.ICarDao;
@@ -30,6 +33,7 @@ import Utilx.DBUtil;
  * @author MyEclipse Persistence Tools
  */
 @Transactional
+@Repository("carDAO")
 public class CarDAO implements ICarDao {
 	private static final Logger log = LoggerFactory.getLogger(CarDAO.class);
 	// property constants
@@ -38,6 +42,7 @@ public class CarDAO implements ICarDao {
 	public static final String TELNUMBER = "telnumber";
 	public static final String OTHERINFO = "otherinfo";
 
+	@Resource(name="sessionFactory")
 	private SessionFactory sessionFactory;
 
 	public void setSessionFactory(SessionFactory sessionFactory) {
@@ -183,7 +188,7 @@ public class CarDAO implements ICarDao {
 	public void deletebyid(int id){
 		DBUtil db=new DBUtil();
 		
-		String sql="delete from Car where carId="+id;
+		String sql="delete from Car where car_id="+id;
 		db.update(sql);
 		
 	}

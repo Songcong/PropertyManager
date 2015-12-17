@@ -13,11 +13,13 @@ import static org.hibernate.criterion.Example.create;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import dao.ICharstanDao;
 import Model.Charstan;
 import Utilx.DBUtil;
+import javax.annotation.Resource;
 
 /**
  * A data access object (DAO) providing persistence and search support for
@@ -31,12 +33,14 @@ import Utilx.DBUtil;
  * @author MyEclipse Persistence Tools
  */
 @Transactional
+@Repository("charstanDAO")
 public class CharstanDAO implements ICharstanDao {
 	private static final Logger log = LoggerFactory
 			.getLogger(CharstanDAO.class);
 	// property constants
 	public static final String DESCRIPTION = "description";
 
+	@Resource(name = "sessionFactory")
 	private SessionFactory sessionFactory;
 
 	public void setSessionFactory(SessionFactory sessionFactory) {

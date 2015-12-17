@@ -12,11 +12,13 @@ import static org.hibernate.criterion.Example.create;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import dao.IExpensetypeDao;
 import Model.Expensetype;
 import Utilx.DBUtil;
+import javax.annotation.Resource;
 
 /**
  * A data access object (DAO) providing persistence and search support for
@@ -30,6 +32,7 @@ import Utilx.DBUtil;
  * @author MyEclipse Persistence Tools
  */
 @Transactional
+@Repository("expensetypeDAO")
 public class ExpensetypeDAO implements IExpensetypeDao{
 	private static final Logger log = LoggerFactory
 			.getLogger(ExpensetypeDAO.class);
@@ -38,6 +41,7 @@ public class ExpensetypeDAO implements IExpensetypeDao{
 	public static final String CHARSTANID = "charstanid";
 	public static final String EXPENSEINFO = "expenseinfo";
 
+	@Resource(name = "sessionFactory")
 	private SessionFactory sessionFactory;
 
 	public void setSessionFactory(SessionFactory sessionFactory) {

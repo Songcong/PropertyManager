@@ -57,7 +57,7 @@ public class LoginAssign extends ActionSupport{
 			Userinfo userinfo =new Userinfo();
 			
 
-			ViewStringSet viewStringSet = new ViewStringSet(userinfo, loginViewModel);
+			ViewStringSet viewStringSet = new ViewStringSet(userinfo);
 			
 			loginViewModel.viewclass.setHeader("<header>");
 			loginViewModel.viewclass.setFooter("<footer>");

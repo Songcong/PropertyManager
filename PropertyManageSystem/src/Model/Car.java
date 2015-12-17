@@ -20,6 +20,7 @@ public class Car implements java.io.Serializable {
 	// Fields
 	@Label("车辆号")
 	private Integer carId;
+	@Label("")
 	private Stall stall;
 	private String carnumber;
 	private String owner;
