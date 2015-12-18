@@ -4,7 +4,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+
 import static javax.persistence.GenerationType.IDENTITY;
+
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -20,11 +22,15 @@ public class Car implements java.io.Serializable {
 	// Fields
 	@Label("车辆号")
 	private Integer carId;
-	@Label("")
+	@Label("车位")
 	private Stall stall;
+	@Label("车牌号")
 	private String carnumber;
+	@Label("车主")
 	private String owner;
+	@Label("联系方式")
 	private String telnumber;
+	@Label("其他时间")
 	private String otherinfo;
 
 	// Constructors

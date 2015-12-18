@@ -4,7 +4,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+
 import static javax.persistence.GenerationType.IDENTITY;
+
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -18,11 +20,15 @@ import javax.persistence.Table;
 public class Expensetype implements java.io.Serializable {
 
 	// Fields
-
+	@Label("收费种类编号")
 	private Integer expenseId;
+	@Label("种类标准")
 	private Charstan charstan;
+	@Label("种类名称")
 	private String expensename;
+	@Label("收费标准ID")
 	private Integer charstanid;
+	@Label("收费说明")
 	private String expenseinfo;
 
 	// Constructors

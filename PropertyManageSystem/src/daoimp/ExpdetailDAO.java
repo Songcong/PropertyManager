@@ -198,7 +198,7 @@ public class ExpdetailDAO implements IExpdetailDao{
 	public void deletebyid(int id){
 		DBUtil db=new DBUtil();
 		
-		String sql="delete from Expdetail where expdetailId="+id;
+		String sql="delete from Expdetail where expdetail_id="+id;
 		db.update(sql);
 		
 	}

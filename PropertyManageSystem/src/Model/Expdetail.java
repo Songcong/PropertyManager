@@ -3,12 +3,15 @@ package Model;
 import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+
 import static javax.persistence.GenerationType.IDENTITY;
+
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -21,13 +24,19 @@ import javax.persistence.Table;
 public class Expdetail implements java.io.Serializable {
 
 	// Fields
-
+	@Label("内部号")
 	private Integer expdetailId;
+	@Label("收费种类ID")
 	private Integer expenseid;
+	@Label("房屋号")
 	private Integer houseid;
+	@Label("是否缴费")
 	private Integer state;
+	@Label("收费人")
 	private String chargepeople;
+	@Label("收费时间")
 	private Timestamp chargetime;
+	@Label("删除标记")
 	private Integer deleted;
 	private Set<Charstan> charstans = new HashSet<Charstan>(0);
 

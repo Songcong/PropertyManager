@@ -2,12 +2,15 @@ package Model;
 
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+
 import static javax.persistence.GenerationType.IDENTITY;
+
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -20,10 +23,13 @@ import javax.persistence.Table;
 public class Stall implements java.io.Serializable {
 
 	// Fields
-
+	@Label("车位编号")
 	private Integer stallId;
+	@Label("车位位置")
 	private String location;
+	@Label("是否使用")
 	private Integer isused;
+	@Label("是否能用")
 	private Integer isuse;
 	private Set<Car> cars = new HashSet<Car>(0);
 

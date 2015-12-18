@@ -1,10 +1,13 @@
 package Model;
 
 import java.sql.Timestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+
 import static javax.persistence.GenerationType.IDENTITY;
+
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -16,12 +19,17 @@ import javax.persistence.Table;
 public class Carmanage implements java.io.Serializable {
 
 	// Fields
-	
+	@Label("内部号")
 	private Integer carmanageid;
+	@Label("停车卡号")
 	private String carid;
+	@Label("停车时间")
 	private Timestamp parttime;
+	@Label("离开时间")
 	private Timestamp leavetime;
+	@Label("总收费")
 	private String cost;
+	@Label("车位ID")
 	private Integer partid;
 
 	// Constructors

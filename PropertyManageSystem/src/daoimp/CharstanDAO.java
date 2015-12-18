@@ -177,7 +177,7 @@ public class CharstanDAO implements ICharstanDao {
 	public void deletebyid(int id){
 		DBUtil db=new DBUtil();
 		
-		String sql="delete from Charstan where stanId="+id;
+		String sql="delete from Charstan where stan_id="+id;
 		db.update(sql);
 		
 	}

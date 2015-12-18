@@ -2,12 +2,15 @@ package Model;
 
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+
 import static javax.persistence.GenerationType.IDENTITY;
+
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -22,9 +25,11 @@ import javax.persistence.Table;
 public class Charstan implements java.io.Serializable {
 
 	// Fields
-
+	@Label("内部号")
 	private Integer stanId;
+	@Label("收费详细说明")
 	private Expdetail expdetail;
+	@Label("描述")
 	private String description;
 	private Set<Expensetype> expensetypes = new HashSet<Expensetype>(0);
 
