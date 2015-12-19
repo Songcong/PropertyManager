@@ -23,7 +23,7 @@ public class Expensetype implements java.io.Serializable {
 	@Label("收费种类编号")
 	private Integer expenseId;
 	@Label("种类标准")
-	private Charstan charstan;
+	private Integer stanId;
 	@Label("种类名称")
 	private String expensename;
 	@Label("收费标准ID")
@@ -38,9 +38,9 @@ public class Expensetype implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Expensetype(Charstan charstan, String expensename,
+	public Expensetype(Integer charstan, String expensename,
 			Integer charstanid, String expenseinfo) {
-		this.charstan = charstan;
+		this.stanId = charstan;
 		this.expensename = expensename;
 		this.charstanid = charstanid;
 		this.expenseinfo = expenseinfo;
@@ -58,14 +58,13 @@ public class Expensetype implements java.io.Serializable {
 		this.expenseId = expenseId;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "stan_id")
-	public Charstan getCharstan() {
-		return this.charstan;
+	@Column(name = "stan_id",length=11)
+	public Integer getCharstan() {
+		return this.stanId;
 	}
 
-	public void setCharstan(Charstan charstan) {
-		this.charstan = charstan;
+	public void setCharstan(Integer charstan) {
+		this.stanId = charstan;
 	}
 
 	@Column(name = "expensename", length = 50)

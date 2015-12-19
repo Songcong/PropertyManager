@@ -28,7 +28,7 @@ public class Charstan implements java.io.Serializable {
 	@Label("内部号")
 	private Integer stanId;
 	@Label("收费详细说明")
-	private Expdetail expdetail;
+	private Integer expdetailId;
 	@Label("描述")
 	private String description;
 	private Set<Expensetype> expensetypes = new HashSet<Expensetype>(0);
@@ -40,9 +40,9 @@ public class Charstan implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Charstan(Expdetail expdetail, String description,
+	public Charstan(Integer expdetail, String description,
 			Set<Expensetype> expensetypes) {
-		this.expdetail = expdetail;
+		this.expdetailId = expdetail;
 		this.description = description;
 		this.expensetypes = expensetypes;
 	}
@@ -59,14 +59,13 @@ public class Charstan implements java.io.Serializable {
 		this.stanId = stanId;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "expdetail_id")
-	public Expdetail getExpdetail() {
-		return this.expdetail;
+	@Column(name = "expdetail_id", length = 11)
+	public Integer getExpdetail() {
+		return this.expdetailId;
 	}
 
-	public void setExpdetail(Expdetail expdetail) {
-		this.expdetail = expdetail;
+	public void setExpdetail(Integer expdetail) {
+		this.expdetailId = expdetail;
 	}
 
 	@Column(name = "description", length = 200)

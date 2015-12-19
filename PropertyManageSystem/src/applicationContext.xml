@@ -10,8 +10,7 @@
 	   http://www.springframework.org/schema/context  
       http://www.springframework.org/schema/context/spring-context-4.0.xsd 
 	   "
-	   xmlns:tx="http://www.springframework.org/schema/tx"
-	>
+	   xmlns:tx="http://www.springframework.org/schema/tx">
 	
 	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
 	<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
@@ -61,33 +60,4 @@
 	
 	
 	
-	<bean id="CarDAO" class="daoimp.CarDAO">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>
-	<bean id="CarmanageDAO" class="daoimp.CarmanageDAO">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>
-	<bean id="CharstanDAO" class="daoimp.CharstanDAO">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>
-	<bean id="ExpdetailDAO" class="daoimp.ExpdetailDAO">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>
-	<bean id="ExpensetypeDAO" class="daoimp.ExpensetypeDAO">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>
-	<bean id="StallDAO" class="daoimp.StallDAO">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean></beans>
+	</beans>

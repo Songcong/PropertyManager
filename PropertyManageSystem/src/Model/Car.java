@@ -22,8 +22,8 @@ public class Car implements java.io.Serializable {
 	// Fields
 	@Label("车辆号")
 	private Integer carId;
-	@Label("车位")
-	private Stall stall;
+	@Label("车位号")
+	private Integer stallId;
 	@Label("车牌号")
 	private String carnumber;
 	@Label("车主")
@@ -40,9 +40,9 @@ public class Car implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Car(Stall stall, String carnumber, String owner, String telnumber,
+	public Car(Integer stall, String carnumber, String owner, String telnumber,
 			String otherinfo) {
-		this.stall = stall;
+		this.stallId = stall;
 		this.carnumber = carnumber;
 		this.owner = owner;
 		this.telnumber = telnumber;
@@ -61,14 +61,13 @@ public class Car implements java.io.Serializable {
 		this.carId = carId;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "stall_id")
-	public Stall getStall() {
-		return this.stall;
+	@Column(name = "stall_id", length = 11)
+	public Integer getStall() {
+		return this.stallId;
 	}
 
-	public void setStall(Stall stall) {
-		this.stall = stall;
+	public void setStall(Integer stall) {
+		this.stallId = stall;
 	}
 
 	@Column(name = "carnumber", length = 60)
