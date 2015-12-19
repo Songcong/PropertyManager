@@ -2,7 +2,6 @@ package daoimp;
 
 import java.sql.Timestamp;
 import java.util.List;
-import java.util.Set;
 
 import org.hibernate.LockOptions;
 import org.hibernate.Query;
@@ -20,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 import dao.IExpdetailDao;
 import Model.Expdetail;
 import Utilx.DBUtil;
+
 import javax.annotation.Resource;
 
 /**
@@ -35,7 +35,7 @@ import javax.annotation.Resource;
  */
 @Transactional
 @Repository("expdetailDAO")
-public class ExpdetailDAO implements IExpdetailDao{
+public class ExpdetailDAO implements IExpdetailDao {
 	private static final Logger log = LoggerFactory
 			.getLogger(ExpdetailDAO.class);
 	// property constants

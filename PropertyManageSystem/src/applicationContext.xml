@@ -60,4 +60,28 @@
 	
 	
 	
-	</beans>
+	<bean id="CarDAO" class="daoimp.CarDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="CharstanDAO" class="daoimp.CharstanDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ExpdetailDAO" class="daoimp.ExpdetailDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ExpensetypeDAO" class="daoimp.ExpensetypeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="StallDAO" class="daoimp.StallDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean></beans>

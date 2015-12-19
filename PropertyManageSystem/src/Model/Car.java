@@ -2,15 +2,14 @@ package Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Car entity. @author MyEclipse Persistence Tools
@@ -22,7 +21,7 @@ public class Car implements java.io.Serializable {
 	// Fields
 	@Label("车辆号")
 	private Integer carId;
-	@Label("车位号")
+	@Label("车位")
 	private Integer stallId;
 	@Label("车牌号")
 	private String carnumber;
@@ -40,9 +39,9 @@ public class Car implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Car(Integer stall, String carnumber, String owner, String telnumber,
-			String otherinfo) {
-		this.stallId = stall;
+	public Car(Integer stallId, String carnumber, String owner,
+			String telnumber, String otherinfo) {
+		this.stallId = stallId;
 		this.carnumber = carnumber;
 		this.owner = owner;
 		this.telnumber = telnumber;
@@ -61,13 +60,13 @@ public class Car implements java.io.Serializable {
 		this.carId = carId;
 	}
 
-	@Column(name = "stall_id", length = 11)
-	public Integer getStall() {
+	@Column(name = "stall_id")
+	public Integer getStallId() {
 		return this.stallId;
 	}
 
-	public void setStall(Integer stall) {
-		this.stallId = stall;
+	public void setStallId(Integer stallId) {
+		this.stallId = stallId;
 	}
 
 	@Column(name = "carnumber", length = 60)

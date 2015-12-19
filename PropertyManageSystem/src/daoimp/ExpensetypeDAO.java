@@ -18,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 import dao.IExpensetypeDao;
 import Model.Expensetype;
 import Utilx.DBUtil;
+
 import javax.annotation.Resource;
 
 /**
@@ -33,10 +34,11 @@ import javax.annotation.Resource;
  */
 @Transactional
 @Repository("expensetypeDAO")
-public class ExpensetypeDAO implements IExpensetypeDao{
+public class ExpensetypeDAO implements IExpensetypeDao {
 	private static final Logger log = LoggerFactory
 			.getLogger(ExpensetypeDAO.class);
 	// property constants
+	public static final String STAN_ID = "stanId";
 	public static final String EXPENSENAME = "expensename";
 	public static final String CHARSTANID = "charstanid";
 	public static final String EXPENSEINFO = "expenseinfo";
@@ -118,6 +120,10 @@ public class ExpensetypeDAO implements IExpensetypeDao{
 			log.error("find by property name failed", re);
 			throw re;
 		}
+	}
+
+	public List<Expensetype> findByStanId(Object stanId) {
+		return findByProperty(STAN_ID, stanId);
 	}
 
 	public List<Expensetype> findByExpensename(Object expensename) {

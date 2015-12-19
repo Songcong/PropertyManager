@@ -7,6 +7,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.List;
 
+import Model.Hide;
 import Model.Label;
 
 public class ViewStringSet {
@@ -112,14 +113,19 @@ public class ViewStringSet {
 					dfield.setAccessible(true);
 					fieldvalue = String.valueOf(dfield.get(datamodel));
 					//获得label
+					Annotation[] annotations = dfield.getAnnotations();
+					Hide hide = dfield.getAnnotation(Hide.class);
 					 Label annotation = dfield.getAnnotation(Label.class);
 					 if(annotation!=null){
 						 label = annotation.value();
 					 }
+					 
+					 if(hide==null){
 					//组装成HTML语句并注入到Viewmodel中
 					str+="<label for='" + fieldname + "' class='" + fieldname + "' >"
 							+ label + "</label>" + "<input type='text' name='"
-							+table + "."+ fieldname + "' class='" + fieldname +  "' /></br>\n";
+							+table + "."+ fieldname + "' class='" + fieldname +  "' />";
+					 }
 				} catch (IllegalArgumentException | IllegalAccessException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

@@ -2,14 +2,9 @@ package Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-
 import static javax.persistence.GenerationType.IDENTITY;
-
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -20,6 +15,7 @@ import javax.persistence.Table;
 public class Expensetype implements java.io.Serializable {
 
 	// Fields
+
 	@Label("收费种类编号")
 	private Integer expenseId;
 	@Label("种类标准")
@@ -38,9 +34,9 @@ public class Expensetype implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Expensetype(Integer charstan, String expensename,
-			Integer charstanid, String expenseinfo) {
-		this.stanId = charstan;
+	public Expensetype(Integer stanId, String expensename, Integer charstanid,
+			String expenseinfo) {
+		this.stanId = stanId;
 		this.expensename = expensename;
 		this.charstanid = charstanid;
 		this.expenseinfo = expenseinfo;
@@ -58,13 +54,13 @@ public class Expensetype implements java.io.Serializable {
 		this.expenseId = expenseId;
 	}
 
-	@Column(name = "stan_id",length=11)
-	public Integer getCharstan() {
+	@Column(name = "stan_id")
+	public Integer getStanId() {
 		return this.stanId;
 	}
 
-	public void setCharstan(Integer charstan) {
-		this.stanId = charstan;
+	public void setStanId(Integer stanId) {
+		this.stanId = stanId;
 	}
 
 	@Column(name = "expensename", length = 50)

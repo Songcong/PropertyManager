@@ -1,18 +1,10 @@
 package Model;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-
 import static javax.persistence.GenerationType.IDENTITY;
-
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -23,6 +15,7 @@ import javax.persistence.Table;
 public class Stall implements java.io.Serializable {
 
 	// Fields
+
 	@Label("车位编号")
 	private Integer stallId;
 	@Label("车位位置")
@@ -31,7 +24,6 @@ public class Stall implements java.io.Serializable {
 	private Integer isused;
 	@Label("是否能用")
 	private Integer isuse;
-	private Set<Car> cars = new HashSet<Car>(0);
 
 	// Constructors
 
@@ -40,11 +32,10 @@ public class Stall implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Stall(String location, Integer isused, Integer isuse, Set<Car> cars) {
+	public Stall(String location, Integer isused, Integer isuse) {
 		this.location = location;
 		this.isused = isused;
 		this.isuse = isuse;
-		this.cars = cars;
 	}
 
 	// Property accessors
@@ -84,15 +75,6 @@ public class Stall implements java.io.Serializable {
 
 	public void setIsuse(Integer isuse) {
 		this.isuse = isuse;
-	}
-
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "stall")
-	public Set<Car> getCars() {
-		return this.cars;
-	}
-
-	public void setCars(Set<Car> cars) {
-		this.cars = cars;
 	}
 
 }

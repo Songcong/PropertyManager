@@ -2,8 +2,6 @@ package daoimp;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.hibernate.LockOptions;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -21,6 +19,8 @@ import dao.ICarDao;
 import Model.Car;
 import Utilx.DBUtil;
 
+import javax.annotation.Resource;
+
 /**
  * A data access object (DAO) providing persistence and search support for Car
  * entities. Transaction control of the save(), update() and delete() operations
@@ -37,12 +37,13 @@ import Utilx.DBUtil;
 public class CarDAO implements ICarDao {
 	private static final Logger log = LoggerFactory.getLogger(CarDAO.class);
 	// property constants
+	public static final String STALL_ID = "stallId";
 	public static final String CARNUMBER = "carnumber";
 	public static final String OWNER = "owner";
 	public static final String TELNUMBER = "telnumber";
 	public static final String OTHERINFO = "otherinfo";
 
-	@Resource(name="sessionFactory")
+	@Resource(name = "sessionFactory")
 	private SessionFactory sessionFactory;
 
 	public void setSessionFactory(SessionFactory sessionFactory) {
@@ -119,6 +120,10 @@ public class CarDAO implements ICarDao {
 		}
 	}
 
+	public List<Car> findByStallId(Object stallId) {
+		return findByProperty(STALL_ID, stallId);
+	}
+
 	public List<Car> findByCarnumber(Object carnumber) {
 		return findByProperty(CARNUMBER, carnumber);
 	}
@@ -181,7 +186,7 @@ public class CarDAO implements ICarDao {
 			throw re;
 		}
 	}
-	
+
 	public static CarDAO getFromApplicationContext(ApplicationContext ctx) {
 		return (CarDAO) ctx.getBean("CarDAO");
 	}

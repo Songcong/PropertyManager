@@ -25,11 +25,11 @@ public class Test {
 		List<Object> list=new ArrayList<Object>();
 //		list.add(userinfo);
 //		loginViewModel.viewclass.setHeader("sadsad");
-//		loginViewModel=(LoginViewModel) viewStringSet.Addset();
+		String d=viewStringSet.Addset();
 //		String s=viewStringSet.listSet(list);
-		String s= viewStringSet.updateset();
+		//String s= viewStringSet.updateset();
 		//System.out.println(loginViewModel.getUsername()+loginViewModel.getPassword()+loginViewModel.viewclass.getHeader());
-		System.out.println(s);
+		System.out.println(d);
 		
 	}
 }

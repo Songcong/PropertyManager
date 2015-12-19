@@ -1,19 +1,11 @@
 package Model;
 
 import java.sql.Timestamp;
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-
 import static javax.persistence.GenerationType.IDENTITY;
-
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -24,6 +16,7 @@ import javax.persistence.Table;
 public class Expdetail implements java.io.Serializable {
 
 	// Fields
+
 	@Label("内部号")
 	private Integer expdetailId;
 	@Label("收费种类ID")
@@ -38,7 +31,6 @@ public class Expdetail implements java.io.Serializable {
 	private Timestamp chargetime;
 	@Label("删除标记")
 	private Integer deleted;
-	private Set<Charstan> charstans = new HashSet<Charstan>(0);
 
 	// Constructors
 
@@ -48,15 +40,13 @@ public class Expdetail implements java.io.Serializable {
 
 	/** full constructor */
 	public Expdetail(Integer expenseid, Integer houseid, Integer state,
-			String chargepeople, Timestamp chargetime, Integer deleted,
-			Set<Charstan> charstans) {
+			String chargepeople, Timestamp chargetime, Integer deleted) {
 		this.expenseid = expenseid;
 		this.houseid = houseid;
 		this.state = state;
 		this.chargepeople = chargepeople;
 		this.chargetime = chargetime;
 		this.deleted = deleted;
-		this.charstans = charstans;
 	}
 
 	// Property accessors
@@ -123,15 +113,6 @@ public class Expdetail implements java.io.Serializable {
 
 	public void setDeleted(Integer deleted) {
 		this.deleted = deleted;
-	}
-
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "expdetail")
-	public Set<Charstan> getCharstans() {
-		return this.charstans;
-	}
-
-	public void setCharstans(Set<Charstan> charstans) {
-		this.charstans = charstans;
 	}
 
 }

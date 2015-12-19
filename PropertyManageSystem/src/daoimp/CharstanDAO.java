@@ -1,7 +1,6 @@
 package daoimp;
 
 import java.util.List;
-import java.util.Set;
 
 import org.hibernate.LockOptions;
 import org.hibernate.Query;
@@ -19,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 import dao.ICharstanDao;
 import Model.Charstan;
 import Utilx.DBUtil;
+
 import javax.annotation.Resource;
 
 /**
@@ -38,6 +38,7 @@ public class CharstanDAO implements ICharstanDao {
 	private static final Logger log = LoggerFactory
 			.getLogger(CharstanDAO.class);
 	// property constants
+	public static final String EXPDETAIL_ID = "expdetailId";
 	public static final String DESCRIPTION = "description";
 
 	@Resource(name = "sessionFactory")
@@ -117,6 +118,10 @@ public class CharstanDAO implements ICharstanDao {
 			log.error("find by property name failed", re);
 			throw re;
 		}
+	}
+
+	public List<Charstan> findByExpdetailId(Object expdetailId) {
+		return findByProperty(EXPDETAIL_ID, expdetailId);
 	}
 
 	public List<Charstan> findByDescription(Object description) {

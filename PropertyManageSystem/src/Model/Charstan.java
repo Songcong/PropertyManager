@@ -1,20 +1,10 @@
 package Model;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-
 import static javax.persistence.GenerationType.IDENTITY;
-
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -25,13 +15,13 @@ import javax.persistence.Table;
 public class Charstan implements java.io.Serializable {
 
 	// Fields
+
 	@Label("内部号")
 	private Integer stanId;
 	@Label("收费详细说明")
 	private Integer expdetailId;
 	@Label("描述")
 	private String description;
-	private Set<Expensetype> expensetypes = new HashSet<Expensetype>(0);
 
 	// Constructors
 
@@ -40,11 +30,9 @@ public class Charstan implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Charstan(Integer expdetail, String description,
-			Set<Expensetype> expensetypes) {
-		this.expdetailId = expdetail;
+	public Charstan(Integer expdetailId, String description) {
+		this.expdetailId = expdetailId;
 		this.description = description;
-		this.expensetypes = expensetypes;
 	}
 
 	// Property accessors
@@ -59,13 +47,13 @@ public class Charstan implements java.io.Serializable {
 		this.stanId = stanId;
 	}
 
-	@Column(name = "expdetail_id", length = 11)
-	public Integer getExpdetail() {
+	@Column(name = "expdetail_id")
+	public Integer getExpdetailId() {
 		return this.expdetailId;
 	}
 
-	public void setExpdetail(Integer expdetail) {
-		this.expdetailId = expdetail;
+	public void setExpdetailId(Integer expdetailId) {
+		this.expdetailId = expdetailId;
 	}
 
 	@Column(name = "description", length = 200)
@@ -75,15 +63,6 @@ public class Charstan implements java.io.Serializable {
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "charstan")
-	public Set<Expensetype> getExpensetypes() {
-		return this.expensetypes;
-	}
-
-	public void setExpensetypes(Set<Expensetype> expensetypes) {
-		this.expensetypes = expensetypes;
 	}
 
 }

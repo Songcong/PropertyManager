@@ -1,7 +1,6 @@
 package daoimp;
 
 import java.util.List;
-import java.util.Set;
 
 import org.hibernate.LockOptions;
 import org.hibernate.Query;
@@ -19,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 import dao.IStallDao;
 import Model.Stall;
 import Utilx.DBUtil;
+
 import javax.annotation.Resource;
 
 /**
@@ -164,7 +164,7 @@ public class StallDAO implements IStallDao {
 			throw re;
 		}
 	}
-	
+
 	public void attachClean(Stall instance) {
 		log.debug("attaching clean Stall instance");
 		try {
