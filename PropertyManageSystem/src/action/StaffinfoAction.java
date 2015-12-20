@@ -4,54 +4,54 @@ import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 import org.springframework.stereotype.Controller;
 
-import Model.Car;
-import service.ICarService;
+import Model.Staffinfo;
+import service.IStaffinfoService;
 
 import javax.annotation.Resource;
 
-@Action (value="carAction",results={
-		@Result(name="list",type="redirectAction",location="carAssign!list"),
+@Action (value="staffinfoAction",results={
+		@Result(name="list",type="redirectAction",location="staffinfoAssign!list"),
 		@Result(name="suc",location="/index.jsp")
 		})
 		
 @Controller
-public class CarAction {
+public class StaffinfoAction {
 
 	
-	@Resource(name = "carService")
-	private ICarService carService;
+	@Resource(name = "staffinfoService")
+	private IStaffinfoService staffinfoService;
 	
 	
-	private Car car;
+	private Staffinfo staffinfo;
 	
-	private String carId;
+	private String staffinfoId;
 	
 	
-	public Car getCar() {
-		return car;
+	public Staffinfo getStaffinfo() {
+		return staffinfo;
 	}
-	public void setCar(Car car) {
-		this.car = car;
+	public void setStaffinfo(Staffinfo staffinfo) {
+		this.staffinfo = staffinfo;
 	}
-	public String getCarId() {
-		return carId;
+	public String getStaffinfoId() {
+		return staffinfoId;
 	}
-	public void setCarId(String carId) {
-		this.carId = carId;
+	public void setStaffinfoId(String staffinfoId) {
+		this.staffinfoId = staffinfoId;
 	}
 	
 	
 	
 	public String add(){
-		carService.addoredit(car);
+		staffinfoService.addoredit(staffinfo);
 		return "list";
 	}
 	public String edit(){
-		carService.addoredit(car);
+		staffinfoService.addoredit(staffinfo);
 		return "list";
 	}
 	public String delete(){
-		carService.deletebyid(Integer.parseInt(carId));
+		staffinfoService.deletebyid(Integer.parseInt(staffinfoId));
 		return "list";
 	}
 }
