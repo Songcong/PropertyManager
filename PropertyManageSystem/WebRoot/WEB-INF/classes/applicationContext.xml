@@ -48,7 +48,22 @@
 				<value>Model.Charstan</value>
 				<value>Model.Expdetail</value>
 				<value>Model.Expensetype</value>
-				<value>Model.Stall</value></list>
+				<value>Model.Stall</value>
+				<value>Model.Chart</value>
+				<value>Model.FamilyDetail</value>
+				<value>Model.Fitment</value>
+				<value>Model.ForeignManage</value>
+				<value>Model.HouseManage</value>
+				<value>Model.HouseOwnerManage</value>
+				<value>Model.Jobtype</value>
+				<value>Model.Occupation</value>
+				<value>Model.Offorest</value>
+				<value>Model.PublicUtilityManage</value>
+				<value>Model.Service</value>
+				<value>Model.Staffinfo</value>
+				<value>Model.TrackRecord</value>
+				<value>Model.UtilityDamage</value>
+				<value>Model.UtilityDetail</value></list>
 		</property>
 		</bean>
 	<bean id="transactionManager"
@@ -60,27 +75,103 @@
 	
 	
 	
-	<bean id="CarDAO" class="daoimp.CarDAO">
+	<bean id="carDAO" class="daoimp.CarDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="CharstanDAO" class="daoimp.CharstanDAO">
+	<bean id="charstanDAO" class="daoimp.CharstanDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="ExpdetailDAO" class="daoimp.ExpdetailDAO">
+	<bean id="expdetailDAO" class="daoimp.ExpdetailDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="ExpensetypeDAO" class="daoimp.ExpensetypeDAO">
+	<bean id="expensetypeDAO" class="daoimp.ExpensetypeDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="StallDAO" class="daoimp.StallDAO">
+	<bean id="stallDAO" class="daoimp.StallDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="chartDAO" class="daoimp.ChartDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="familyDetailDAO" class="daoimp.FamilyDetailDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="fitmentDAO" class="daoimp.FitmentDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="foreignManageDAO" class="daoimp.ForeignManageDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="HouseManageDAO" class="daoimp.HouseManageDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="houseOwnerManageDAO" class="daoimp.HouseOwnerManageDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="jobtypeDAO" class="daoimp.JobtypeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="occupationDAO" class="daoimp.OccupationDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="offorestDAO" class="daoimp.OfforestDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="publicUtilityManageDAO"
+		class="daoimp.PublicUtilityManageDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="serviceDAO" class="daoimp.ServiceDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="staffinfoDAO" class="daoimp.StaffinfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="trackRecordDAO" class="daoimp.TrackRecordDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="utilityDamageDAO" class="daoimp.UtilityDamageDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="utilityDetailDAO" class="daoimp.UtilityDetailDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
