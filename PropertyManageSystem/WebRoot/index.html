@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>简单响应式的后台管理页面-777模板</title>
+<title>物业管理系统后台管理</title>
 
 <link rel="stylesheet" href="css/index.css" type="text/css" media="screen" />
 
@@ -35,54 +35,61 @@
             <li class="childUlLi">
                <a href="main.html"  target="menuFrame"><i class="glyph-icon icon-home"></i>小区成员管理</a>
                 <ul>
-                    <li><a href="user_add.html" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>管理员管理</a></li>
-		    <li><a href="user_add.html" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>职员管理</a></li>
-		    <li><a href="user_add.html" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>职位管理</a></li>
+                    <li><a href="userinfoAssign!list" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>管理员管理</a></li>
+		    <li><a href="staffinfoAssign!list" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>职员管理</a></li>
+		    <li><a href="occupationAssign!list" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>职位管理</a></li>
                 </ul>		
             </li>
             <li class="childUlLi">
                 <a href="user.html"  target="menuFrame"> <i class="glyph-icon icon-reorder"></i>小区收费管理</a>
                 <ul>
-                    <li><a href="#"><i class="glyph-icon icon-chevron-right"></i>收费种类管理</a></li>
-                    <li><a href="#"><i class="glyph-icon icon-chevron-right"></i>收费明细管理</a></li>
-                    <li><a href="#"><i class="glyph-icon icon-chevron-right"></i>车辆登记管理</a></li>
-		    <li><a href="#"><i class="glyph-icon icon-chevron-right"></i>车辆管理</a></li>
-		    <li><a href="#"><i class="glyph-icon icon-chevron-right"></i>车位管理</a></li>
+                    <li><a href="expensetypeAssign!list" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>收费种类管理</a></li>
+                    <li><a href="expdetailAssign!list" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>收费明细管理</a></li>
+                    <li><a href="carAssign!list" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>车辆登记管理</a></li>
+		    <li><a href="carmanageAssign!list" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>停车管理</a></li>
+		    <li><a href="stallAssign!list" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>车位管理</a></li>
                 </ul>
             </li>
             <li class="childUlLi">
                 <a href="role.html" target="menuFrame"> <i class="glyph-icon icon-reorder"></i>小区岗位管理</a>
                 <ul>
-                    <li><a href="#"><i class="glyph-icon icon-chevron-right"></i>岗位类型管理</a></li>
+                    <li><a href="jobtypeAssign!list" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>岗位类型管理</a></li>
                 </ul>
             </li>
             <li class="childUlLi">
-                <a href="#"> <i class="glyph-icon  icon-location-arrow"></i>小区公用设备管理</a>
+                <a href="#"> <i class="glyph-icon icon-reorder"></i>小区公用设备管理</a>
                 <ul>
-                    <li><a href="meunbox.html" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>公共设备管理</a></li>
-                    <li><a href="meunbox_add.html" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>设备详细信息管理</a></li>
-                    <li><a href="#" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>公用设备损坏管理</a></li>
+                    <li><a href="publicUtilityManageAssign!list" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>公共设备管理</a></li>
+                    <li><a href="utilityDetailAssign!list" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>设备详细信息管理</a></li>
+                    <li><a href="utilityDamageAssign!list" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>公用设备损坏管理</a></li>
                 </ul>
             </li>
 	   <li class="childUlLi">
-                <a href="role.html" target="menuFrame"> <i class="glyph-icon icon-reorder"></i>小区业绩管理</a>
+                <a href="role.html" target="menuFrame"> <i class="glyph-icon icon-reorder"></i>小区物业业绩管理</a>
                 <ul>
-                    <li><a href="#"><i class="glyph-icon icon-chevron-right"></i>业绩管理</a></li>
+                    <li><a href="trackRecordAssign!list" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>业绩管理</a></li>
                 </ul>
             </li>
-            <li class="childUlLi">
-                <a href="#"> <i class="glyph-icon  icon-location-arrow"></i>小区外来人口管理</a>
-                <ul>
-                    <li><a href="meunbox.html" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>外来人口管理</a></li>
-                </ul>
-            </li>
+           
     	    <li class="childUlLi">
-                <a href="#"> <i class="glyph-icon  icon-location-arrow"></i>小区房屋管理</a>
+                <a href="#"> <i class="glyph-icon icon-reorder"></i>小区房屋管理</a>
                 <ul>
-                    <li><a href="meunbox.html" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>房屋管理</a></li>
-		    <li><a href="meunbox.html" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>房屋业主管理</a></li>
+                    <li><a href="houseManageAssign!list" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>房屋管理</a></li>
+		            <li><a href="houseOwnerManageAssign!list" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>房屋业主管理</a></li>
+					
                 </ul>
             </li>
+			 <li class="childUlLi">
+                <a href="#"> <i class="glyph-icon icon-reorder"></i>小区其他管理</a>
+                <ul>
+				    <li><a href="foreignManageAssign!list" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>外来人口管理</a></li>
+                    <li><a href="fitmentAssign!list" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>房屋装修管理</a></li>
+					<li><a href="serviceAssign!list" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>物业维修管理</a></li>
+					<li><a href="chartAssign!list" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>与业主交谈管理</a></li>
+					<li><a href="offorestAssign!list" target="menuFrame"><i class="glyph-icon icon-chevron-right"></i>小区绿化管理</a></li>
+                </ul>
+            </li>
+			
         </ul>
     </div>
     <!--菜单-->
@@ -100,7 +107,7 @@
         </div>
     </div>
     <div class="layout_footer">
-        <p>Copyright © 2014 - XXXX科技</p>
+        <p>Copyright © 2014 - 济南大学计卓1201</p>
     </div>
 </body>
 </html>

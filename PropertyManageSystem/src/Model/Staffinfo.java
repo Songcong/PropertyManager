@@ -1,17 +1,14 @@
 package Model;
 
 import java.sql.Timestamp;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-
 import static javax.persistence.GenerationType.IDENTITY;
-
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import Anno.Label;
+import Anno.*;
 
 /**
  * Staffinfo entity. @author MyEclipse Persistence Tools
@@ -24,6 +21,7 @@ public class Staffinfo implements java.io.Serializable {
 
 	@Label("职员ID")
 	private Integer staffId;
+	@Label("职位ID")
 	private Integer occupationId;
 	@Label("真实姓名")
 	private String realname;

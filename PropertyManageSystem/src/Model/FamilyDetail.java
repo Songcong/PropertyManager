@@ -3,13 +3,11 @@ package Model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-
 import static javax.persistence.GenerationType.IDENTITY;
-
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import Anno.Label;
+import Anno.*;
 
 /**
  * FamilyDetail entity. @author MyEclipse Persistence Tools
@@ -22,6 +20,7 @@ public class FamilyDetail implements java.io.Serializable {
 
 	@Label("家庭编号")
 	private Integer familyId;
+	@Label("外部ID")
 	private Integer foreignId;
 	@Label("姓名")
 	private String name;

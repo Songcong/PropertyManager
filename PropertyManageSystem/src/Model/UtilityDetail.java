@@ -9,7 +9,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import Anno.Label;
+import Anno.*;
 
 /**
  * UtilityDetail entity. @author MyEclipse Persistence Tools
@@ -22,6 +22,7 @@ public class UtilityDetail implements java.io.Serializable {
 
 	@Label("内部号")
 	private Integer utilityId;
+	@Label("设备管理ID")
 	private Integer utilityManageId;
 	@Label("设备说明")
 	private String utilityinfo;
