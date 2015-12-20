@@ -7,8 +7,8 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.List;
 
-import Model.Hide;
-import Model.Label;
+import Anno.Hide;
+import Anno.Label;
 
 public class ViewStringSet {
 	private Object datamodel;
@@ -201,6 +201,11 @@ public class ViewStringSet {
 				
 				String fieldname = dfield.getName();
 				String fieldvalue =  String.valueOf(dfield.get(object));
+				
+				if("null".equalsIgnoreCase(fieldvalue))
+				{
+					fieldvalue="";
+				}
 				
 				//获得字段对应的get方法
 				PropertyDescriptor pd = new PropertyDescriptor(dfield.getName(), object.getClass());  

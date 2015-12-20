@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.transaction.annotation.Transactional;
 
+import dao.IFitmentDao;
 import Model.Fitment;
 import Utilx.DBUtil;
 
@@ -30,7 +31,7 @@ import Utilx.DBUtil;
  * @author MyEclipse Persistence Tools
  */
 @Transactional
-public class FitmentDAO {
+public class FitmentDAO implements IFitmentDao {
 	private static final Logger log = LoggerFactory.getLogger(FitmentDAO.class);
 	// property constants
 	public static final String PLACE = "place";
@@ -176,7 +177,7 @@ public class FitmentDAO {
 	public void deletebyid(int id){
 		DBUtil db=new DBUtil();
 		
-		String sql="delete from Car where fitment_id="+id;
+		String sql="delete from Fitment where fitment_id="+id;
 		db.update(sql);
 		
 	}

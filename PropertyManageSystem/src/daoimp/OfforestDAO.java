@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.transaction.annotation.Transactional;
 
+import dao.IOfforestDao;
 import Model.Offorest;
 import Utilx.DBUtil;
 
@@ -30,7 +31,7 @@ import Utilx.DBUtil;
  * @author MyEclipse Persistence Tools
  */
 @Transactional
-public class OfforestDAO {
+public class OfforestDAO implements IOfforestDao {
 	private static final Logger log = LoggerFactory
 			.getLogger(OfforestDAO.class);
 	// property constants
@@ -182,7 +183,7 @@ public class OfforestDAO {
 	public void deletebyid(int id){
 		DBUtil db=new DBUtil();
 		
-		String sql="delete from Car where afforest_id="+id;
+		String sql="delete from Offorest where afforest_id="+id;
 		db.update(sql);
 		
 	}

@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.transaction.annotation.Transactional;
 
+import dao.IForeignManageDao;
 import Model.ForeignManage;
 import Utilx.DBUtil;
 
@@ -29,7 +30,7 @@ import Utilx.DBUtil;
  * @author MyEclipse Persistence Tools
  */
 @Transactional
-public class ForeignManageDAO {
+public class ForeignManageDAO implements IForeignManageDao {
 	private static final Logger log = LoggerFactory
 			.getLogger(ForeignManageDAO.class);
 	// property constants
@@ -202,7 +203,7 @@ public class ForeignManageDAO {
 	public void deletebyid(int id){
 		DBUtil db=new DBUtil();
 		
-		String sql="delete from Car where foreign_id="+id;
+		String sql="delete from ForeignManage where foreign_id="+id;
 		db.update(sql);
 		
 	}

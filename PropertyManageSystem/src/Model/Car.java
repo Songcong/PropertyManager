@@ -11,6 +11,8 @@ import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import Anno.Label;
+
 /**
  * Car entity. @author MyEclipse Persistence Tools
  */

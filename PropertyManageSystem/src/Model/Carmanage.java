@@ -11,6 +11,8 @@ import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import Anno.Label;
+
 /**
  * Carmanage entity. @author MyEclipse Persistence Tools
  */

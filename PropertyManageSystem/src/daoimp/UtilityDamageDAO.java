@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.transaction.annotation.Transactional;
 
+import dao.IUtilityDamageDao;
 import Model.UtilityDamage;
 import Utilx.DBUtil;
 
@@ -29,7 +30,7 @@ import Utilx.DBUtil;
  * @author MyEclipse Persistence Tools
  */
 @Transactional
-public class UtilityDamageDAO {
+public class UtilityDamageDAO implements IUtilityDamageDao{
 	private static final Logger log = LoggerFactory
 			.getLogger(UtilityDamageDAO.class);
 	// property constants
@@ -182,7 +183,7 @@ public class UtilityDamageDAO {
 	public void deletebyid(int id){
 		DBUtil db=new DBUtil();
 		
-		String sql="delete from Car where utilitydamageid="+id;
+		String sql="delete from UtilityDamage where utilitydamageid="+id;
 		db.update(sql);
 		
 	}

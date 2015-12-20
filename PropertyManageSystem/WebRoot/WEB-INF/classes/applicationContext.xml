@@ -120,7 +120,7 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="HouseManageDAO" class="daoimp.HouseManageDAO">
+	<bean id="houseManageDAO" class="daoimp.HouseManageDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>

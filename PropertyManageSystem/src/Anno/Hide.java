@@ -1,4 +1,4 @@
-package Model;
+package Anno;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

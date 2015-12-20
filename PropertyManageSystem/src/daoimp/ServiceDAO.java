@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.transaction.annotation.Transactional;
 
+import dao.IServiceDao;
 import Model.Service;
 import Utilx.DBUtil;
 
@@ -30,7 +31,7 @@ import Utilx.DBUtil;
  * @author MyEclipse Persistence Tools
  */
 @Transactional
-public class ServiceDAO {
+public class ServiceDAO implements IServiceDao{
 	private static final Logger log = LoggerFactory.getLogger(ServiceDAO.class);
 	// property constants
 	public static final String FACILITYPRO = "facilitypro";
@@ -191,7 +192,7 @@ public class ServiceDAO {
 	public void deletebyid(int id){
 		DBUtil db=new DBUtil();
 		
-		String sql="delete from Car where service_id="+id;
+		String sql="delete from Service where service_id="+id;
 		db.update(sql);
 		
 	}

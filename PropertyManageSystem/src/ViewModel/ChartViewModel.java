@@ -1,6 +1,6 @@
 package ViewModel;
 
-public class ChartViewmodel {
+public class ChartViewModel {
 public ViewClass viewClass;
 	
 	private String list;

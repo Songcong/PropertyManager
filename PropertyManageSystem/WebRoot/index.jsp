@@ -30,6 +30,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <a href="expdetailAssign!list">exp</a>
      <a href="expensetypeAssign!list">exp2</a>
      <a href="stallAssign!list">stall</a>
+     <a href="jobtypeAssign!list">jobtypeDao</a>
      
   </body>
 </html>

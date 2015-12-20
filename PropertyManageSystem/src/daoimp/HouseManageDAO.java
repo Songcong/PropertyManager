@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.transaction.annotation.Transactional;
 
+import dao.IHouseManageDao;
 import Model.HouseManage;
 import Utilx.DBUtil;
 
@@ -26,7 +27,7 @@ import Utilx.DBUtil;
   * @author MyEclipse Persistence Tools 
  */
     @Transactional   
-public class HouseManageDAO  {
+public class HouseManageDAO implements IHouseManageDao  {
 	     private static final Logger log = LoggerFactory.getLogger(HouseManageDAO.class);
 		//property constants
 	public static final String LOCATION = "location";
@@ -196,7 +197,7 @@ public class HouseManageDAO  {
 	public void deletebyid(int id){
 		DBUtil db=new DBUtil();
 		
-		String sql="delete from Car where house_id="+id;
+		String sql="delete from HouseManage where house_id="+id;
 		db.update(sql);
 		
 	}

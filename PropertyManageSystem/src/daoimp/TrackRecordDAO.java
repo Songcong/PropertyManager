@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.transaction.annotation.Transactional;
 
+import dao.ITrackRecordDao;
 import Model.TrackRecord;
 import Utilx.DBUtil;
 
@@ -30,7 +31,7 @@ import Utilx.DBUtil;
  * @author MyEclipse Persistence Tools
  */
 @Transactional
-public class TrackRecordDAO {
+public class TrackRecordDAO implements ITrackRecordDao {
 	private static final Logger log = LoggerFactory
 			.getLogger(TrackRecordDAO.class);
 	// property constants
@@ -188,7 +189,7 @@ public class TrackRecordDAO {
 	public void deletebyid(int id){
 		DBUtil db=new DBUtil();
 		
-		String sql="delete from Car where record_id="+id;
+		String sql="delete from TrackRecord where record_id="+id;
 		db.update(sql);
 		
 	}

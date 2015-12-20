@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.transaction.annotation.Transactional;
 
+import dao.IChartDao;
 import Model.Chart;
 import Utilx.DBUtil;
 
@@ -29,7 +30,7 @@ import Utilx.DBUtil;
  * @author MyEclipse Persistence Tools
  */
 @Transactional
-public class ChartDAO {
+public class ChartDAO implements IChartDao {
 	private static final Logger log = LoggerFactory.getLogger(ChartDAO.class);
 	// property constants
 	public static final String CONVOBJID = "convobjid";
@@ -192,7 +193,7 @@ public class ChartDAO {
 	public void deletebyid(int id){
 		DBUtil db=new DBUtil();
 		
-		String sql="delete from Car where chart_id="+id;
+		String sql="delete from Chart where chart_id="+id;
 		db.update(sql);
 		
 	}
