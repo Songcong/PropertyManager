@@ -6,7 +6,10 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
+import Anno.FK;
 import Anno.Hide;
 import Anno.Label;
 
@@ -130,7 +133,7 @@ public class ViewStringSet {
 					//组装成HTML语句并注入到Viewmodel中
 					str+="<label for='" + fieldname + "' class='" + fieldname + "' >"
 							+ label + "</label>" + "<input type='"+type+"' name='"
-							+table + "."+ fieldname + "' class='" + fieldname +  "' /><br/>";
+							+table + "."+ fieldname + "' class='" + fieldname +  "' /><br/>\n";
 					 }
 				} catch (IllegalArgumentException | IllegalAccessException e) {
 					// TODO Auto-generated catch block
@@ -153,21 +156,27 @@ public class ViewStringSet {
 				String label ="";
 				//获得字段名
 				String fieldname = dfield.getName();
+				String type = dfield.getType().getSimpleName();
+				//类型转换
+				type=typeConvert(type);
 				//获得字段值
 				String fieldvalue;
 				try {
 					dfield.setAccessible(true);
 					fieldvalue = String.valueOf(dfield.get(datamodel));
+					Hide hide = dfield.getAnnotation(Hide.class);
 					//获得label
 					 Label annotation = dfield.getAnnotation(Label.class);
 					 if(annotation!=null){
 						 label = annotation.value();
 					 }
+					 if(hide==null){
 					//组装成HTML语句并注入到Viewmodel中
 					str+="<label for='" + fieldname + "'class='" + fieldname + "'>"
-							+ label + "</label>" + "<input type='text' name='"
+							+ label + "</label>" + "<input type='"+type+"' name='"
 							+table + "."+ fieldname + "' class='" + fieldname + "' value='"
 							+ fieldvalue + "' /></br>\n";
+					 }
 				} catch (IllegalArgumentException | IllegalAccessException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -196,6 +205,7 @@ public class ViewStringSet {
 			String idvalue="";
 			for (Field dfield : datafields) {
 				String label="";
+				String fk="";
 				//转化为公有属性
 				dfield.setAccessible(true);
 				
@@ -230,11 +240,19 @@ public class ViewStringSet {
 					}
 				}
 				
-				
-				//拼接td
-				td += "<td class='" + fieldname + "'>" + fieldvalue + "</td>\n";
-				//拼接th
-				th += "<th class='"+fieldname+"'>" + label + "</th>\n";
+				FK fkann = dfield.getAnnotation(FK.class);
+				if(fkann!=null){
+					 fk = fkann.value();
+					 td += "<td class='" + fieldname + "'><a href='"+fk+"Assign!findbyid?"+fieldname+"="+fieldvalue+"' target='_blank'>" + fieldvalue + "</td>\n";
+						//拼接th
+						th += "<th class='"+fieldname+"'>" + label + "</th>\n";
+				 }
+				else{
+					//拼接td
+					td += "<td class='" + fieldname + "'>" + fieldvalue + "</td>\n";
+					//拼接th
+					th += "<th class='"+fieldname+"'>" + label + "</th>\n";
+				}
 
 			}
 			//首字母小写
@@ -265,5 +283,28 @@ public class ViewStringSet {
 		default: return "text";
 		}
 	}
+	
+//	public String StringConvert(String match,String fieldname,String fieldvalue,String label,String table){
+//		
+//		switch (match) {
+//		case "fieldname":return fieldname;
+//		case "fieldvalue":return fieldvalue;
+//		case "label":return label;
+//		case "table":return table;
+//		default:return "";
+//		}
+//		
+//	}
+//	public String replace(String str,String regex){
+//		
+//		Matcher m = Pattern.compile(regex).matcher(str);
+//		int i=0;
+//		while(m.find(i)){
+//			StringConvert(match, fieldname, fieldvalue, label, table);
+//		}
+//		
+//		return "";
+//	}
 
 }
+

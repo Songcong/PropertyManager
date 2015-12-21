@@ -27,6 +27,7 @@ public class StaffinfoAction {
 	private String staffId;
 	
 	
+	
 	public Staffinfo getStaffinfo() {
 		return staffinfo;
 	}

@@ -1,6 +1,7 @@
 package action;
 
 import java.beans.IntrospectionException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.struts2.convention.annotation.Action;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import service.IExpensetypeService;
 import Model.Expensetype;
 import Utilx.ViewStringSet;
+import ViewModel.ExpdetailViewModel;
 import ViewModel.ExpensetypeViewModel;
 import ViewModel.ViewClass;
 
@@ -41,6 +43,13 @@ public class ExpensetypeAssign extends ActionSupport{
 		this.cvm = cvm;
 	}
 
+	public String getExpenseId() {
+		return expenseId;
+	}
+
+	public void setExpenseId(String expenseId) {
+		this.expenseId = expenseId;
+	}
 
 	
 	
@@ -100,14 +109,23 @@ public class ExpensetypeAssign extends ActionSupport{
 			
 			return "list";
 	}
-
-	public String getExpenseId() {
-		return expenseId;
+	public String findbyid() throws IllegalArgumentException, IllegalAccessException, IntrospectionException{
+		 ExpensetypeViewModel expensetypeViewModel=new ExpensetypeViewModel();
+		List list1=new ArrayList();
+		Expensetype expensetype = expensetypeService.edit(Integer.parseInt(expenseId));
+		list1.add(expensetype);
+		
+		ViewStringSet viewStringSet = new ViewStringSet();
+			
+		expensetypeViewModel.setList(viewStringSet.listSet(list1));
+		
+		cvm=expensetypeViewModel;
+		
+		return "list";
+		
 	}
 
-	public void setExpenseId(String expenseId) {
-		this.expenseId = expenseId;
-	}
+	
 	 
 	 
 	 

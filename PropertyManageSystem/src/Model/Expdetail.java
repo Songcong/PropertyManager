@@ -11,6 +11,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import Anno.FK;
 import Anno.Label;
 
 /**
@@ -24,8 +25,9 @@ public class Expdetail implements java.io.Serializable {
 
 	@Label("内部号")
 	private Integer expdetailId;
+	@FK("expensetype")
 	@Label("收费种类ID")
-	private Integer expenseid;
+	private Integer expenseId;
 	@Label("房屋号")
 	private Integer houseid;
 	@Label("是否缴费")
@@ -46,7 +48,7 @@ public class Expdetail implements java.io.Serializable {
 	/** full constructor */
 	public Expdetail(Integer expenseid, Integer houseid, Integer state,
 			String chargepeople, Timestamp chargetime, Integer deleted) {
-		this.expenseid = expenseid;
+		this.expenseId = expenseid;
 		this.houseid = houseid;
 		this.state = state;
 		this.chargepeople = chargepeople;
@@ -67,12 +69,12 @@ public class Expdetail implements java.io.Serializable {
 	}
 
 	@Column(name = "expenseid")
-	public Integer getExpenseid() {
-		return this.expenseid;
+	public Integer getExpenseId() {
+		return this.expenseId;
 	}
 
-	public void setExpenseid(Integer expenseid) {
-		this.expenseid = expenseid;
+	public void setExpenseId(Integer expenseid) {
+		this.expenseId = expenseid;
 	}
 
 	@Column(name = "houseid")

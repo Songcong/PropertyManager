@@ -28,6 +28,7 @@ public class StaffinfoAssign extends ActionSupport{
 	
 	 private String staffId;
 	 
+	 
 	 @Resource(name = "staffinfoService")
 	private IStaffinfoService staffinfoService;
 

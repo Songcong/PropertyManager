@@ -9,6 +9,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import Anno.FK;
 import Anno.Label;
 
 /**
@@ -22,6 +23,7 @@ public class Charstan implements java.io.Serializable {
 
 	@Label("内部号")
 	private Integer stanId;
+	@FK("expdetail")
 	@Label("收费详细说明")
 	private Integer expdetailId;
 	@Label("描述")

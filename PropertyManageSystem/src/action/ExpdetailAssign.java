@@ -1,6 +1,7 @@
 package action;
 
 import java.beans.IntrospectionException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -107,5 +108,19 @@ public class ExpdetailAssign extends ActionSupport {
 			
 			
 			return "list";
+	}
+	public String findbyid() throws IllegalArgumentException, IllegalAccessException, IntrospectionException{
+		ExpdetailViewModel expdetailViewModel=new ExpdetailViewModel();
+		List list1=new ArrayList();
+		list1.add(expdetailService.edit(Integer.parseInt(expdetailId)));
+		
+		ViewStringSet viewStringSet = new ViewStringSet();
+			
+		expdetailViewModel.setList(viewStringSet.listSet(list1));
+		
+		cvm=expdetailViewModel;
+		
+		return "list";
+		
 	}
 }
