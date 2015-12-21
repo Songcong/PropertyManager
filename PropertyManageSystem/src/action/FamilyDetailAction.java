@@ -24,7 +24,7 @@ public class FamilyDetailAction {
 	
 	private FamilyDetail familyDetail;
 	
-	private String familyDetailId;
+	private String familyId;
 	
 	
 	public FamilyDetail getFamilyDetail() {
@@ -32,12 +32,6 @@ public class FamilyDetailAction {
 	}
 	public void setFamilyDetail(FamilyDetail familyDetail) {
 		this.familyDetail = familyDetail;
-	}
-	public String getFamilyDetailId() {
-		return familyDetailId;
-	}
-	public void setFamilyDetailId(String familyDetailId) {
-		this.familyDetailId = familyDetailId;
 	}
 	
 	
@@ -51,7 +45,13 @@ public class FamilyDetailAction {
 		return "list";
 	}
 	public String delete(){
-		familyDetailService.deletebyid(Integer.parseInt(familyDetailId));
+		familyDetailService.deletebyid(Integer.parseInt(familyId));
 		return "list";
+	}
+	public String getFamilyId() {
+		return familyId;
+	}
+	public void setFamilyId(String familyId) {
+		this.familyId = familyId;
 	}
 }
