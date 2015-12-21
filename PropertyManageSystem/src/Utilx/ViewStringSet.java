@@ -105,8 +105,10 @@ public class ViewStringSet {
 	
 		for (Field dfield : datafields) {
 				String label ="";
+				
 				//获得字段名
 				String fieldname = dfield.getName();
+				String type = dfield.getType().toString();
 				//获得字段值
 				String fieldvalue;
 				try {
@@ -123,7 +125,7 @@ public class ViewStringSet {
 					 if(hide==null){
 					//组装成HTML语句并注入到Viewmodel中
 					str+="<label for='" + fieldname + "' class='" + fieldname + "' >"
-							+ label + "</label>" + "<input type='text' name='"
+							+ label + "</label>" + "<input type='"+type+"' name='"
 							+table + "."+ fieldname + "' class='" + fieldname +  "' />";
 					 }
 				} catch (IllegalArgumentException | IllegalAccessException e) {

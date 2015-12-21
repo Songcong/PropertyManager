@@ -26,7 +26,7 @@ public class ForeignManageAssign extends ActionSupport{
 	
 	private ForeignManageViewModel cvm;
 	
-	 private String foreignManageId;
+	 private String foreignId;
 	 
 	 @Resource(name = "foreignManageService")
 	private IForeignManageService foreignManageService;
@@ -41,12 +41,12 @@ public class ForeignManageAssign extends ActionSupport{
 		this.cvm = cvm;
 	}
 
-	public String getForeignManageId() {
-		return foreignManageId;
+	public String getForeignId() {
+		return foreignId;
 	}
 
-	public void setForeignManageId(String foreignManageId) {
-		this.foreignManageId = foreignManageId;
+	public void setForeignId(String foreignManageId) {
+		this.foreignId = foreignManageId;
 	}
 
 	
@@ -75,7 +75,7 @@ public class ForeignManageAssign extends ActionSupport{
 		
 		ForeignManageViewModel foreignManageViewModel=new ForeignManageViewModel();
 		
-		ForeignManage foreignManage = foreignManageService.edit(Integer.parseInt(foreignManageId));
+		ForeignManage foreignManage = foreignManageService.edit(Integer.parseInt(foreignId));
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="foreignManageAction!edit";

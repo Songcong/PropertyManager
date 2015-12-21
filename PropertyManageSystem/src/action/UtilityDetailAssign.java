@@ -26,7 +26,7 @@ public class UtilityDetailAssign extends ActionSupport{
 	
 	private UtilityDetailViewModel cvm;
 	
-	 private String utilityDetailId;
+	 private String utilityId;
 	 
 	 @Resource(name = "utilityDetailService")
 	private IUtilityDetailService utilityDetailService;
@@ -41,16 +41,18 @@ public class UtilityDetailAssign extends ActionSupport{
 		this.cvm = cvm;
 	}
 
-	public String getUtilityDetailId() {
-		return utilityDetailId;
-	}
-
-	public void setUtilityDetailId(String utilityDetailId) {
-		this.utilityDetailId = utilityDetailId;
-	}
+	
 
 	
 	
+	public String getUtilityId() {
+		return utilityId;
+	}
+
+	public void setUtilityId(String utilityId) {
+		this.utilityId = utilityId;
+	}
+
 	public String add(){
 		UtilityDetailViewModel utilityDetailViewModel=new UtilityDetailViewModel();
 		
@@ -75,7 +77,7 @@ public class UtilityDetailAssign extends ActionSupport{
 		
 		UtilityDetailViewModel utilityDetailViewModel=new UtilityDetailViewModel();
 		
-		UtilityDetail utilityDetail = utilityDetailService.edit(Integer.parseInt(utilityDetailId));
+		UtilityDetail utilityDetail = utilityDetailService.edit(Integer.parseInt(utilityId));
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="utilityDetailAction!edit";

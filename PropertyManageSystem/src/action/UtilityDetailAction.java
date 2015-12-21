@@ -24,7 +24,7 @@ public class UtilityDetailAction {
 	
 	private UtilityDetail utilityDetail;
 	
-	private String utilityDetailId;
+	private String utilityId;
 	
 	
 	public UtilityDetail getUtilityDetail() {
@@ -33,13 +33,16 @@ public class UtilityDetailAction {
 	public void setUtilityDetail(UtilityDetail utilityDetail) {
 		this.utilityDetail = utilityDetail;
 	}
-	public String getUtilityDetailId() {
-		return utilityDetailId;
-	}
-	public void setUtilityDetailId(String utilityDetailId) {
-		this.utilityDetailId = utilityDetailId;
-	}
 	
+	
+	
+	
+	public String getUtilityId() {
+		return utilityId;
+	}
+	public void setUtilityId(String utilityId) {
+		this.utilityId = utilityId;
+	}
 	
 	
 	public String add(){
@@ -51,7 +54,7 @@ public class UtilityDetailAction {
 		return "list";
 	}
 	public String delete(){
-		utilityDetailService.deletebyid(Integer.parseInt(utilityDetailId));
+		utilityDetailService.deletebyid(Integer.parseInt(utilityId));
 		return "list";
 	}
 }

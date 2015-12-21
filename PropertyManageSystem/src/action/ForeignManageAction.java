@@ -24,7 +24,7 @@ public class ForeignManageAction {
 	
 	private ForeignManage foreignManage;
 	
-	private String foreignManageId;
+	private String foreignId;
 	
 	
 	public ForeignManage getForeignManage() {
@@ -33,14 +33,16 @@ public class ForeignManageAction {
 	public void setForeignManage(ForeignManage foreignManage) {
 		this.foreignManage = foreignManage;
 	}
-	public String getForeignManageId() {
-		return foreignManageId;
-	}
-	public void setForeignManageId(String foreignManageId) {
-		this.foreignManageId = foreignManageId;
-	}
 	
 	
+	
+	
+	public String getForeignId() {
+		return foreignId;
+	}
+	public void setForeignId(String foreignId) {
+		this.foreignId = foreignId;
+	}
 	
 	public String add(){
 		foreignManageService.addoredit(foreignManage);
@@ -51,7 +53,7 @@ public class ForeignManageAction {
 		return "list";
 	}
 	public String delete(){
-		foreignManageService.deletebyid(Integer.parseInt(foreignManageId));
+		foreignManageService.deletebyid(Integer.parseInt(foreignId));
 		return "list";
 	}
 }
