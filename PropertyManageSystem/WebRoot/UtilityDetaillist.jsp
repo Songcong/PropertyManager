@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-       <a href="utilityDetailDamageAssign!add">增加</a>
+       <a href="utilityDetailAssign!add">增加</a>
     ${cvm.list}
   </body>
 </html>

@@ -31,7 +31,7 @@
 			<attribute name="owner.project.facets" value="me.hibernate"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="com.genuitec.runtime.library/com.genuitec.spring_3.1">
+	<classpathentry kind="con" path="com.genuitec.runtime.library/com.genuitec.spring_4.1">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="WEB-INF/lib"/>
 		</attributes>
