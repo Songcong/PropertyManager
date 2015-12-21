@@ -27,7 +27,7 @@ public class CharstanAssign extends ActionSupport {
 	
 	private CharstanViewModel cvm;
 	
-	 private String charstanId;
+	 private String stanId;
 	 
 	 @Resource(name = "charstanService")
 	private ICharstanService charstanService;
@@ -42,13 +42,6 @@ public class CharstanAssign extends ActionSupport {
 		this.cvm = cvm;
 	}
 
-	public String getCharstanId() {
-		return charstanId;
-	}
-
-	public void setCharstanId(String charstanId) {
-		this.charstanId = charstanId;
-	}
 
 	
 	
@@ -76,7 +69,7 @@ public class CharstanAssign extends ActionSupport {
 		
 		CharstanViewModel charstanViewModel=new CharstanViewModel();
 		
-		Charstan charstan = charstanService.edit(Integer.parseInt(charstanId));
+		Charstan charstan = charstanService.edit(Integer.parseInt(stanId));
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="charstanAction!edit";
@@ -107,5 +100,13 @@ public class CharstanAssign extends ActionSupport {
 			
 			
 			return "list";
+	}
+
+	public String getStanId() {
+		return stanId;
+	}
+
+	public void setStanId(String stanId) {
+		this.stanId = stanId;
 	}
 }

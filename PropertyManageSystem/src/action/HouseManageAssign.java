@@ -26,7 +26,7 @@ public class HouseManageAssign extends ActionSupport{
 	
 	private HouseManageViewModel cvm;
 	
-	 private String houseManageId;
+	 private String houseId;
 	 
 	 @Resource(name = "houseManageService")
 	private IHouseManageService houseManageService;
@@ -41,15 +41,7 @@ public class HouseManageAssign extends ActionSupport{
 		this.cvm = cvm;
 	}
 
-	public String getHouseManageId() {
-		return houseManageId;
-	}
 
-	public void setHouseManageId(String houseManageId) {
-		this.houseManageId = houseManageId;
-	}
-
-	
 	
 	public String add(){
 		HouseManageViewModel houseManageViewModel=new HouseManageViewModel();
@@ -75,7 +67,7 @@ public class HouseManageAssign extends ActionSupport{
 		
 		HouseManageViewModel houseManageViewModel=new HouseManageViewModel();
 		
-		HouseManage houseManage = houseManageService.edit(Integer.parseInt(houseManageId));
+		HouseManage houseManage = houseManageService.edit(Integer.parseInt(houseId));
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="houseManageAction!edit";
@@ -106,6 +98,14 @@ public class HouseManageAssign extends ActionSupport{
 			
 			
 			return "list";
+	}
+
+	public String getHouseId() {
+		return houseId;
+	}
+
+	public void setHouseId(String houseId) {
+		this.houseId = houseId;
 	}
 	 
 	 

@@ -24,7 +24,7 @@ public class StaffinfoAction {
 	
 	private Staffinfo staffinfo;
 	
-	private String staffinfoId;
+	private String staffId;
 	
 	
 	public Staffinfo getStaffinfo() {
@@ -33,13 +33,7 @@ public class StaffinfoAction {
 	public void setStaffinfo(Staffinfo staffinfo) {
 		this.staffinfo = staffinfo;
 	}
-	public String getStaffinfoId() {
-		return staffinfoId;
-	}
-	public void setStaffinfoId(String staffinfoId) {
-		this.staffinfoId = staffinfoId;
-	}
-	
+
 	
 	
 	public String add(){
@@ -51,7 +45,13 @@ public class StaffinfoAction {
 		return "list";
 	}
 	public String delete(){
-		staffinfoService.deletebyid(Integer.parseInt(staffinfoId));
+		staffinfoService.deletebyid(Integer.parseInt(staffId));
 		return "list";
+	}
+	public String getStaffId() {
+		return staffId;
+	}
+	public void setStaffId(String staffId) {
+		this.staffId = staffId;
 	}
 }

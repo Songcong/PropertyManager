@@ -26,7 +26,7 @@ public class FamilyDetailAssign extends ActionSupport{
 	
 	private FamilyDetailViewModel cvm;
 	
-	 private String familyDetailId;
+	 private String familyId;
 	 
 	 @Resource(name = "familyDetailService")
 	private IFamilyDetailService familyDetailService;
@@ -41,13 +41,14 @@ public class FamilyDetailAssign extends ActionSupport{
 		this.cvm = cvm;
 	}
 
-	public String getFamilyDetailId() {
-		return familyDetailId;
+	public String getFamilyId() {
+		return familyId;
 	}
 
-	public void setFamilyDetailId(String familyDetailId) {
-		this.familyDetailId = familyDetailId;
+	public void setFamilyId(String familyId) {
+		this.familyId = familyId;
 	}
+	 
 
 	
 	
@@ -75,7 +76,7 @@ public class FamilyDetailAssign extends ActionSupport{
 		
 		FamilyDetailViewModel familyDetailViewModel=new FamilyDetailViewModel();
 		
-		FamilyDetail familyDetail = familyDetailService.edit(Integer.parseInt(familyDetailId));
+		FamilyDetail familyDetail = familyDetailService.edit(Integer.parseInt(familyId));
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="familyDetailAction!edit";
@@ -107,7 +108,8 @@ public class FamilyDetailAssign extends ActionSupport{
 			
 			return "list";
 	}
-	 
+
+
 	 
 	 
 	 

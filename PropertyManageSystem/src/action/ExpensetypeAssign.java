@@ -26,7 +26,7 @@ public class ExpensetypeAssign extends ActionSupport{
 	
 	private ExpensetypeViewModel cvm;
 	
-	 private String expensetypeId;
+	 private String expenseId;
 	 
 	 @Resource(name = "expensetypeService")
 	private IExpensetypeService expensetypeService;
@@ -41,13 +41,6 @@ public class ExpensetypeAssign extends ActionSupport{
 		this.cvm = cvm;
 	}
 
-	public String getExpensetypeId() {
-		return expensetypeId;
-	}
-
-	public void setExpensetypeId(String expensetypeId) {
-		this.expensetypeId = expensetypeId;
-	}
 
 	
 	
@@ -75,7 +68,7 @@ public class ExpensetypeAssign extends ActionSupport{
 		
 		ExpensetypeViewModel expensetypeViewModel=new ExpensetypeViewModel();
 		
-		Expensetype expensetype = expensetypeService.edit(Integer.parseInt(expensetypeId));
+		Expensetype expensetype = expensetypeService.edit(Integer.parseInt(expenseId));
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="expensetypeAction!edit";
@@ -106,6 +99,14 @@ public class ExpensetypeAssign extends ActionSupport{
 			
 			
 			return "list";
+	}
+
+	public String getExpenseId() {
+		return expenseId;
+	}
+
+	public void setExpenseId(String expenseId) {
+		this.expenseId = expenseId;
 	}
 	 
 	 

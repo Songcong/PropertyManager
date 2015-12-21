@@ -26,7 +26,7 @@ public class StaffinfoAssign extends ActionSupport{
 	
 	private StaffinfoViewModel cvm;
 	
-	 private String staffinfoId;
+	 private String staffId;
 	 
 	 @Resource(name = "staffinfoService")
 	private IStaffinfoService staffinfoService;
@@ -41,13 +41,6 @@ public class StaffinfoAssign extends ActionSupport{
 		this.cvm = cvm;
 	}
 
-	public String getStaffinfoId() {
-		return staffinfoId;
-	}
-
-	public void setStaffinfoId(String staffinfoId) {
-		this.staffinfoId = staffinfoId;
-	}
 
 	
 	
@@ -75,7 +68,7 @@ public class StaffinfoAssign extends ActionSupport{
 		
 		StaffinfoViewModel staffinfoViewModel=new StaffinfoViewModel();
 		
-		Staffinfo staffinfo = staffinfoService.edit(Integer.parseInt(staffinfoId));
+		Staffinfo staffinfo = staffinfoService.edit(Integer.parseInt(staffId));
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="staffinfoAction!edit";
@@ -106,6 +99,14 @@ public class StaffinfoAssign extends ActionSupport{
 			
 			
 			return "list";
+	}
+
+	public String getStaffId() {
+		return staffId;
+	}
+
+	public void setStaffId(String staffId) {
+		this.staffId = staffId;
 	}
 	 
 	 

@@ -24,7 +24,7 @@ public class CharstanAction {
 	
 	private Charstan charstan;
 	
-	private String charstanId;
+	private String stanId;
 	
 	
 	public Charstan getCharstan() {
@@ -33,15 +33,7 @@ public class CharstanAction {
 	public void setCharstan(Charstan charstan) {
 		this.charstan = charstan;
 	}
-	public String getCharstanId() {
-		return charstanId;
-	}
-	public void setCharstanId(String charstanId) {
-		this.charstanId = charstanId;
-	}
-	
-	
-	
+
 	public String add(){
 		charstanService.addoredit(charstan);
 		return "list";
@@ -51,7 +43,13 @@ public class CharstanAction {
 		return "list";
 	}
 	public String delete(){
-		charstanService.deletebyid(Integer.parseInt(charstanId));
+		charstanService.deletebyid(Integer.parseInt(stanId));
 		return "list";
+	}
+	public String getStanId() {
+		return stanId;
+	}
+	public void setStanId(String stanId) {
+		this.stanId = stanId;
 	}
 }

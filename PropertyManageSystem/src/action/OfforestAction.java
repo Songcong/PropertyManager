@@ -24,7 +24,7 @@ public class OfforestAction {
 	
 	private Offorest offorest;
 	
-	private String offorestId;
+	private String afforestId;
 	
 	
 	public Offorest getOfforest() {
@@ -33,14 +33,7 @@ public class OfforestAction {
 	public void setOfforest(Offorest offorest) {
 		this.offorest = offorest;
 	}
-	public String getOfforestId() {
-		return offorestId;
-	}
-	public void setOfforestId(String offorestId) {
-		this.offorestId = offorestId;
-	}
-	
-	
+
 	
 	public String add(){
 		offorestService.addoredit(offorest);
@@ -51,7 +44,13 @@ public class OfforestAction {
 		return "list";
 	}
 	public String delete(){
-		offorestService.deletebyid(Integer.parseInt(offorestId));
+		offorestService.deletebyid(Integer.parseInt(afforestId));
 		return "list";
+	}
+	public String getAfforestId() {
+		return afforestId;
+	}
+	public void setAfforestId(String afforestId) {
+		this.afforestId = afforestId;
 	}
 }

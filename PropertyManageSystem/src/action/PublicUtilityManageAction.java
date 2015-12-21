@@ -24,7 +24,7 @@ public class PublicUtilityManageAction {
 	
 	private PublicUtilityManage publicUtilityManage;
 	
-	private String publicUtilityManageId;
+	private String utilityManageId;
 	
 	
 	public PublicUtilityManage getPublicUtilityManage() {
@@ -33,13 +33,7 @@ public class PublicUtilityManageAction {
 	public void setPublicUtilityManage(PublicUtilityManage publicUtilityManage) {
 		this.publicUtilityManage = publicUtilityManage;
 	}
-	public String getPublicUtilityManageId() {
-		return publicUtilityManageId;
-	}
-	public void setPublicUtilityManageId(String publicUtilityManageId) {
-		this.publicUtilityManageId = publicUtilityManageId;
-	}
-	
+
 	
 	
 	public String add(){
@@ -51,7 +45,13 @@ public class PublicUtilityManageAction {
 		return "list";
 	}
 	public String delete(){
-		publicUtilityManageService.deletebyid(Integer.parseInt(publicUtilityManageId));
+		publicUtilityManageService.deletebyid(Integer.parseInt(utilityManageId));
 		return "list";
+	}
+	public String getUtilityManageId() {
+		return utilityManageId;
+	}
+	public void setUtilityManageId(String utilityManageId) {
+		this.utilityManageId = utilityManageId;
 	}
 }

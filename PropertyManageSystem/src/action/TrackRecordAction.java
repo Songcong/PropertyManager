@@ -24,7 +24,7 @@ public class TrackRecordAction {
 	
 	private TrackRecord trackRecord;
 	
-	private String trackRecordId;
+	private String recordId;
 	
 	
 	public TrackRecord getTrackRecord() {
@@ -33,15 +33,7 @@ public class TrackRecordAction {
 	public void setTrackRecord(TrackRecord trackRecord) {
 		this.trackRecord = trackRecord;
 	}
-	public String getTrackRecordId() {
-		return trackRecordId;
-	}
-	public void setTrackRecordId(String trackRecordId) {
-		this.trackRecordId = trackRecordId;
-	}
-	
-	
-	
+
 	public String add(){
 		trackRecordService.addoredit(trackRecord);
 		return "list";
@@ -51,7 +43,13 @@ public class TrackRecordAction {
 		return "list";
 	}
 	public String delete(){
-		trackRecordService.deletebyid(Integer.parseInt(trackRecordId));
+		trackRecordService.deletebyid(Integer.parseInt(recordId));
 		return "list";
+	}
+	public String getRecordId() {
+		return recordId;
+	}
+	public void setRecordId(String recordId) {
+		this.recordId = recordId;
 	}
 }

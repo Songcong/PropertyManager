@@ -26,7 +26,7 @@ public class ExpensetypeAction extends ActionSupport {
 	
 	private Expensetype expensetype;
 	
-	private String expensetypeId;
+	private String expenseId;
 	
 	
 	public Expensetype getExpensetype() {
@@ -35,13 +35,7 @@ public class ExpensetypeAction extends ActionSupport {
 	public void setExpensetype(Expensetype expensetype) {
 		this.expensetype = expensetype;
 	}
-	public String getExpensetypeId() {
-		return expensetypeId;
-	}
-	public void setExpensetypeId(String expensetypeId) {
-		this.expensetypeId = expensetypeId;
-	}
-	
+
 	
 	
 	public String add(){
@@ -53,8 +47,14 @@ public class ExpensetypeAction extends ActionSupport {
 		return "list";
 	}
 	public String delete(){
-		expensetypeService.deletebyid(Integer.parseInt(expensetypeId));
+		expensetypeService.deletebyid(Integer.parseInt(expenseId));
 		return "list";
+	}
+	public String getExpenseId() {
+		return expenseId;
+	}
+	public void setExpenseId(String expenseId) {
+		this.expenseId = expenseId;
 	}
 }
 

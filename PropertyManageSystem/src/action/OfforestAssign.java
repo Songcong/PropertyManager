@@ -26,7 +26,7 @@ public class OfforestAssign extends ActionSupport{
 	
 	private OfforestViewModel cvm;
 	
-	 private String offorestId;
+	 private String afforestId;
 	 
 	 @Resource(name = "offorestService")
 	private IOfforestService offorestService;
@@ -41,13 +41,6 @@ public class OfforestAssign extends ActionSupport{
 		this.cvm = cvm;
 	}
 
-	public String getOfforestId() {
-		return offorestId;
-	}
-
-	public void setOfforestId(String offorestId) {
-		this.offorestId = offorestId;
-	}
 
 	
 	
@@ -75,7 +68,7 @@ public class OfforestAssign extends ActionSupport{
 		
 		OfforestViewModel offorestViewModel=new OfforestViewModel();
 		
-		Offorest offorest = offorestService.edit(Integer.parseInt(offorestId));
+		Offorest offorest = offorestService.edit(Integer.parseInt(afforestId));
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="offorestAction!edit";
@@ -106,6 +99,14 @@ public class OfforestAssign extends ActionSupport{
 			
 			
 			return "list";
+	}
+
+	public String getAfforestId() {
+		return afforestId;
+	}
+
+	public void setAfforestId(String afforestId) {
+		this.afforestId = afforestId;
 	}
 	 
 	 

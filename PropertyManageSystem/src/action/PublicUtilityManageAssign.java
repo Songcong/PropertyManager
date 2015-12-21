@@ -26,7 +26,7 @@ public class PublicUtilityManageAssign extends ActionSupport{
 	
 	private PublicUtilityManageViewModel cvm;
 	
-	 private String publicUtilityManageId;
+	 private String utilityManageId;
 	 
 	 @Resource(name = "publicUtilityManageService")
 	private IPublicUtilityManageService publicUtilityManageService;
@@ -41,13 +41,6 @@ public class PublicUtilityManageAssign extends ActionSupport{
 		this.cvm = cvm;
 	}
 
-	public String getPublicUtilityManageId() {
-		return publicUtilityManageId;
-	}
-
-	public void setPublicUtilityManageId(String publicUtilityManageId) {
-		this.publicUtilityManageId = publicUtilityManageId;
-	}
 
 	
 	
@@ -75,7 +68,7 @@ public class PublicUtilityManageAssign extends ActionSupport{
 		
 		PublicUtilityManageViewModel publicUtilityManageViewModel=new PublicUtilityManageViewModel();
 		
-		PublicUtilityManage publicUtilityManage = publicUtilityManageService.edit(Integer.parseInt(publicUtilityManageId));
+		PublicUtilityManage publicUtilityManage = publicUtilityManageService.edit(Integer.parseInt(utilityManageId));
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="publicUtilityManageAction!edit";
@@ -106,6 +99,14 @@ public class PublicUtilityManageAssign extends ActionSupport{
 			
 			
 			return "list";
+	}
+
+	public String getUtilityManageId() {
+		return utilityManageId;
+	}
+
+	public void setUtilityManageId(String utilityManageId) {
+		this.utilityManageId = utilityManageId;
 	}
 	 
 	 

@@ -26,7 +26,7 @@ public class TrackRecordAssign extends ActionSupport{
 	
 	private TrackRecordViewModel cvm;
 	
-	 private String trackRecordId;
+	 private String recordId;
 	 
 	 @Resource(name = "trackRecordService")
 	private ITrackRecordService trackRecordService;
@@ -41,13 +41,6 @@ public class TrackRecordAssign extends ActionSupport{
 		this.cvm = cvm;
 	}
 
-	public String getTrackRecordId() {
-		return trackRecordId;
-	}
-
-	public void setTrackRecordId(String trackRecordId) {
-		this.trackRecordId = trackRecordId;
-	}
 
 	
 	
@@ -75,7 +68,7 @@ public class TrackRecordAssign extends ActionSupport{
 		
 		TrackRecordViewModel trackRecordViewModel=new TrackRecordViewModel();
 		
-		TrackRecord trackRecord = trackRecordService.edit(Integer.parseInt(trackRecordId));
+		TrackRecord trackRecord = trackRecordService.edit(Integer.parseInt(recordId));
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="trackRecordAction!edit";
@@ -106,6 +99,14 @@ public class TrackRecordAssign extends ActionSupport{
 			
 			
 			return "list";
+	}
+
+	public String getRecordId() {
+		return recordId;
+	}
+
+	public void setRecordId(String recordId) {
+		this.recordId = recordId;
 	}
 	 
 	 

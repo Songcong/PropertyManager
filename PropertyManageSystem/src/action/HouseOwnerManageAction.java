@@ -24,7 +24,7 @@ public class HouseOwnerManageAction {
 	
 	private HouseOwnerManage houseOwnerManage;
 	
-	private String houseOwnerManageId;
+	private String manageId;
 	
 	
 	public HouseOwnerManage getHouseOwnerManage() {
@@ -33,13 +33,7 @@ public class HouseOwnerManageAction {
 	public void setHouseOwnerManage(HouseOwnerManage houseOwnerManage) {
 		this.houseOwnerManage = houseOwnerManage;
 	}
-	public String getHouseOwnerManageId() {
-		return houseOwnerManageId;
-	}
-	public void setHouseOwnerManageId(String houseOwnerManageId) {
-		this.houseOwnerManageId = houseOwnerManageId;
-	}
-	
+
 	
 	
 	public String add(){
@@ -51,7 +45,13 @@ public class HouseOwnerManageAction {
 		return "list";
 	}
 	public String delete(){
-		houseOwnerManageService.deletebyid(Integer.parseInt(houseOwnerManageId));
+		houseOwnerManageService.deletebyid(Integer.parseInt(manageId));
 		return "list";
+	}
+	public String getManageId() {
+		return manageId;
+	}
+	public void setManageId(String manageId) {
+		this.manageId = manageId;
 	}
 }
