@@ -108,7 +108,11 @@ public class ViewStringSet {
 				
 				//获得字段名
 				String fieldname = dfield.getName();
-				String type = dfield.getType().toString();
+				//获得类型名
+				String type = dfield.getType().getSimpleName();
+				//类型转换
+				type=typeConvert(type);
+				
 				//获得字段值
 				String fieldvalue;
 				try {
@@ -126,7 +130,7 @@ public class ViewStringSet {
 					//组装成HTML语句并注入到Viewmodel中
 					str+="<label for='" + fieldname + "' class='" + fieldname + "' >"
 							+ label + "</label>" + "<input type='"+type+"' name='"
-							+table + "."+ fieldname + "' class='" + fieldname +  "' />";
+							+table + "."+ fieldname + "' class='" + fieldname +  "' /><br/>";
 					 }
 				} catch (IllegalArgumentException | IllegalAccessException e) {
 					// TODO Auto-generated catch block
@@ -251,6 +255,15 @@ public class ViewStringSet {
 		
 
 		return lists;
+	}
+	
+	public String typeConvert(String typename){
+		
+		switch (typename) {
+		case "Integer": return "number";
+		case "Timestamp": return "date";
+		default: return "text";
+		}
 	}
 
 }
