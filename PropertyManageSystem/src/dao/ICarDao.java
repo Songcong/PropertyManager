@@ -9,4 +9,5 @@ public interface ICarDao {
 	public Car findById(java.lang.Integer id);
 	public List findAll();
 	public void deletebyid(int id);
+	public List findByProperty(String propertyName, Object value);
 }

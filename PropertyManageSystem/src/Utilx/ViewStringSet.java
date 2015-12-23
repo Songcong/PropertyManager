@@ -266,12 +266,12 @@ public class ViewStringSet {
 			td = "<tr class='"+p+"'>" + td + "<td><a class='edit glyphicon glyphicon-cog' id='"+id+idvalue+"'"
 					+ " href='"+tablenamel+"Assign!edit?"+id+"="+idvalue+"'></a></td>\n"
 					+ "<td><a class='delete glyphicon glyphicon-trash' id='"+id+idvalue+"'"
-					+ " href='"+tablenamel+"Action!delete?"+id+"="+idvalue+"'></a></td></tr>\n";
+					+ " hs='"+tablenamel+"Action!delete?"+id+"="+idvalue+"' ></a></td></tr>\n";
 			th = "<thead><tr>" + th + "<th colspan='2'>操作</th></tr></thead>";
 			if(i==5){
-				lis+="<li><a  onclick=\"clicks();\">"+p+"</a></li>";
+				lis+="<li><a href='javasript:retrun false' class='page'   ps='"+p+"'>"+p+"</a></li>";
 				p++;
-				i=1;
+				i=0;
 			}
 			
 			trs += td;
@@ -286,13 +286,13 @@ public class ViewStringSet {
 		String pagepick="<nav>"
 				+ "<ul class=\"pagination\">"
 				+ "<li>"
-				+ "<a href=\"#\" aria-label=\"Previous\">"
+				+ "<a  class='page' aria-label=\"Previous\">"
 				+ "<span aria-hidden=\"true\">&laquo;</span>"
 				+ "</a>"
 				+ "</li>"
 				+lis
 				+ "<li>"
-				+ "<a href=\"#\" aria-label=\"Next\">"
+				+ "<a  class='page' aria-label=\"Next\">"
 				+ "<span aria-hidden=\"true\">&raquo;</span>"
 				+ "</a>"
 				+ "</li>"

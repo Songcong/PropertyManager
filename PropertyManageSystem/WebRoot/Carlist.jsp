@@ -24,7 +24,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="css/default.css">
 	<link rel="stylesheet" href="css/responsive-tables.min.css" type="text/css">
 	
-	<script type="text/javascript"  src="js/jquery-1.11.0.min.js"></script>>
+	<script type="text/javascript"  src="js/jquery-1.11.0.min.js"></script>
+	
+	
 	<style type="text/css">
 	    /* example demo page styles */
 	    table {
@@ -62,35 +64,54 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    }
 
 	</style>
-	<script type="text/javascript">
+	
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+	
+  </head>
+  
+  
+  <body>
+  <script type="text/javascript">
     function loadp(p){
     		$('tbody tr').each(function(){
-    		var class = this.attr('class');
-    		
-    		if(class==p)
+    		var cc = $(this).attr('class');
+    		if(cc==p)
     		{
-    			this.show();
+    			$(this).show();
     		}
     		else{
-    			this.hide();
+    			$(this).hide();
     		}
     	});
     }
+   
     
-    function clicks(){
-    	var va= this.val();
-    	loadp(va)
-    }
+    $(document).ready(function (){
+    	loadp(1)
+    	 $.responsiveTables(); 
+    	$('.delete').click(function(){
+    	if(confirm("您确定要删除吗")){
+    		window.location.href=$(this).attr('hs')
+    		
+    	}
+    	})
+    	
+    	
+    	$('.page').click(function(){
+    		var va= $(this).attr('ps')
+    		loadp(va)
+    	})
+    	
+    })
     	
     </script>
-  </head>
-  
-  <body>
   	<a class="glyphicon glyphicon-plus" href="carAssign!add">增加记录</a>
     ${cvm.list}
     
     
-    
+    <script type="text/javascript"  src="js/jquery.responsive-tables.min.js"></script>
     
   </body>
 </html>
