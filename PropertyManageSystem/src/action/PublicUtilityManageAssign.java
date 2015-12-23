@@ -51,6 +51,7 @@ public class PublicUtilityManageAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="publicUtilityManageAction!add";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>添加公用设备管理信息</h2></div>";
 		 publicUtilityManageViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(publicUtilityManage);
@@ -72,6 +73,7 @@ public class PublicUtilityManageAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="publicUtilityManageAction!edit";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>编辑公用设备管理信息</h2></div>";
 		 publicUtilityManageViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(publicUtilityManage);

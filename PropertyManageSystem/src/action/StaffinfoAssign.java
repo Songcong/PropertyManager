@@ -52,6 +52,7 @@ public class StaffinfoAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="staffinfoAction!add";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>添加职员信息</h2></div>";
 		 staffinfoViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(staffinfo);
@@ -73,6 +74,7 @@ public class StaffinfoAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="staffinfoAction!edit";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>编辑职员信息</h2></div>";
 		 staffinfoViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(staffinfo);

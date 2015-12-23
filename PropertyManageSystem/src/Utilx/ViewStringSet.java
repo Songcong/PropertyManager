@@ -131,9 +131,9 @@ public class ViewStringSet {
 					 
 					 if(hide==null){
 					//组装成HTML语句并注入到Viewmodel中
-					str+="<div class='form-group row'><div class='col-md-offset-1 col-md-1'><label for='" + fieldname + "' class=''" + fieldname + "' >"
-							+ label+":"+ "</label></div>" + "<div class='col-md-4'><input type='"+type+"' name='"
-							+table + "."+ fieldname + "' class='form-control'" + fieldname +  "' /></div></div><br/>\n";
+					str+="<div class='form-group row'><label for='" + fieldname + "' class='fieldname control-label col-sm-2 " + fieldname + "' >"
+							+ label+":"+ "</label>" + "<div class='col-md-4'><input type='"+type+"' name='"
+							+table + "."+ fieldname + "' class='form-control " + fieldname +  "' /></div></div><br/>\n";
 					 }
 				} catch (IllegalArgumentException | IllegalAccessException e) {
 					// TODO Auto-generated catch block
@@ -172,8 +172,8 @@ public class ViewStringSet {
 					 }
 					 if(hide==null){
 					//组装成HTML语句并注入到Viewmodel中
-					str+="<div class='form-group row'><div class='col-md-offset-1 col-md-1'><label for='" + fieldname + "'class='" + fieldname + "'>"
-							+ label +":"+ "</label></div>" + "<div class='col-md-4'><input type='"+type+"' name='"
+					str+="<div class='form-group row'><label for='" + fieldname + "'class='fieldname control-label col-sm-2 " + fieldname + "'>"
+							+ label +":"+ "</label>" + "<div class='col-md-4'><input type='"+type+"' name='"
 							+table + "."+ fieldname + "' class='form-control " + fieldname + "' value='"
 							+ fieldvalue + "' /></div></div></br>\n";
 					 }

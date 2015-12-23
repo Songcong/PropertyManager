@@ -58,6 +58,7 @@ public class OccupationAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="occupationAction!add";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>添加职位信息</h2></div>";
 		 occupationViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(occupation);
@@ -79,6 +80,7 @@ public class OccupationAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="occupationAction!edit";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>编辑岗位信息</h2></div>";
 		 occupationViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(occupation);

@@ -60,6 +60,7 @@ public class UtilityDetailAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="utilityDetailAction!add";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>添加设备详细信息</h2></div>";
 		 utilityDetailViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(utilityDetail);
@@ -81,6 +82,7 @@ public class UtilityDetailAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="utilityDetailAction!edit";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>编辑设备详细信息</h2></div>";
 		 utilityDetailViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(utilityDetail);

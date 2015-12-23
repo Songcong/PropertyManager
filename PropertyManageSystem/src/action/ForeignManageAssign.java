@@ -58,6 +58,7 @@ public class ForeignManageAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="foreignManageAction!add";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>添加外来人口信息</h2></div>";
 		 foreignManageViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(foreignManage);
@@ -79,6 +80,7 @@ public class ForeignManageAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="foreignManageAction!edit";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>编辑外来人口信息</h2></div>";
 		 foreignManageViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(foreignManage);

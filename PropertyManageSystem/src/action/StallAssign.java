@@ -58,6 +58,7 @@ public class StallAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="stallAction!add";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>添加车位信息</h2></div>";
 		 stallViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(stall);
@@ -79,6 +80,7 @@ public class StallAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="stallAction!edit";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>编辑车位信息</h2></div>";
 		 stallViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(stall);

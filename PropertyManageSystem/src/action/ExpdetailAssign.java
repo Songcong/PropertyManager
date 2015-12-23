@@ -60,6 +60,7 @@ public class ExpdetailAssign extends ActionSupport {
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="expdetailAction!add";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>添加收费明细信息</h2></div>";
 		 expdetailViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(expdetail);
@@ -81,6 +82,7 @@ public class ExpdetailAssign extends ActionSupport {
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="expdetailAction!edit";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>编辑收费明细信息</h2></div>";
 		 expdetailViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(expdetail);

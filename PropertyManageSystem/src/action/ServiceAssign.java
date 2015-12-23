@@ -58,6 +58,7 @@ public class ServiceAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="serviceAction!add";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>添加维修管理信息</h2></div>";
 		 serviceViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(service);
@@ -79,6 +80,7 @@ public class ServiceAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="serviceAction!edit";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>编辑维修管理信息</h2></div>";
 		 serviceViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(service);

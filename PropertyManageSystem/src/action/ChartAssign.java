@@ -58,6 +58,7 @@ public class ChartAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="chartAction!add";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>添加与业主交谈信息</h2><br/></div>";
 		 chartViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(chart);
@@ -79,6 +80,7 @@ public class ChartAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="chartAction!edit";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>编辑与业主交谈信息</h2></div>";
 		 chartViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(chart);
