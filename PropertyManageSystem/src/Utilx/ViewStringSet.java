@@ -172,10 +172,10 @@ public class ViewStringSet {
 					 }
 					 if(hide==null){
 					//组装成HTML语句并注入到Viewmodel中
-					str+="<label for='" + fieldname + "'class='" + fieldname + "'>"
+					str+="<div class='input-group'><label for='" + fieldname + "'class='" + fieldname + "'>"
 							+ label + "</label>" + "<input type='"+type+"' name='"
-							+table + "."+ fieldname + "' class='" + fieldname + "' value='"
-							+ fieldvalue + "' /></br>\n";
+							+table + "."+ fieldname + "' class='form-control " + fieldname + "' value='"
+							+ fieldvalue + "' /></div></br>\n";
 					 }
 				} catch (IllegalArgumentException | IllegalAccessException e) {
 					// TODO Auto-generated catch block
@@ -193,10 +193,14 @@ public class ViewStringSet {
 
 		String ths = "";
 		String trs = "";
+		String lis= "";
 		String tablename="";
+		int i=1;
+		int p=1;
 		for (Object object : list) {
 			String th = "";
 			String td = "";
+			//String li="";
 			
 			//获得类名
 			tablename=object.getClass().getSimpleName();
@@ -243,7 +247,8 @@ public class ViewStringSet {
 				FK fkann = dfield.getAnnotation(FK.class);
 				if(fkann!=null){
 					 fk = fkann.value();
-					 td += "<td class='" + fieldname + "'><a href='"+fk+"Assign!findbyid?"+fieldname+"="+fieldvalue+"' target='_blank'>" + fieldvalue + "</td>\n";
+					 td += "<td class='" + fieldname + "'><a href='"+fk+"Assign!findbyid?"+fieldname+"="+fieldvalue+"' target='_blank'  onclick=\"window.open(this.href,'_blank', 'scrollbars=0,resizable=0,width=600,height=300;');return false;\">" 
+					 + fieldvalue + "</td>\n";
 						//拼接th
 						th += "<th class='"+fieldname+"'>" + label + "</th>\n";
 				 }
@@ -258,18 +263,43 @@ public class ViewStringSet {
 			//首字母小写
 			String tablenamel=tablename.substring(0,1).toLowerCase()+tablename.substring(1,tablename.length());
 			//增加修改和删除
-			td = "<tr>" + td + "<td><a class='edit' id='"+id+idvalue+"'"
-					+ " href='"+tablenamel+"Assign!edit?"+id+"="+idvalue+"'>修改</a></td>\n"
-					+ "<td><a class='delete' id='"+id+idvalue+"'"
-					+ " href='"+tablenamel+"Action!delete?"+id+"="+idvalue+"'>删除</a></td></tr>\n";
-			th = "<tr>" + th + "<th colspan='2'>操作</th></tr>";
+			td = "<tr class='"+p+"'>" + td + "<td><a class='edit glyphicon glyphicon-cog' id='"+id+idvalue+"'"
+					+ " href='"+tablenamel+"Assign!edit?"+id+"="+idvalue+"'></a></td>\n"
+					+ "<td><a class='delete glyphicon glyphicon-trash' id='"+id+idvalue+"'"
+					+ " href='"+tablenamel+"Action!delete?"+id+"="+idvalue+"'></a></td></tr>\n";
+			th = "<thead><tr>" + th + "<th colspan='2'>操作</th></tr></thead>";
+			if(i==5){
+				lis+="<li><a  onclick=\"clicks();\">"+p+"</a></li>";
+				p++;
+				i=1;
+			}
 			
 			trs += td;
 			ths = th;
+			
+			i++;
 		}
 		
-		String lists ="<table class='"+tablename+"'>\n" +ths + trs+"</table>";
-
+		
+		String lists ="<table class='respond "+tablename+"'>\n" +ths +"<tbody>"+ trs+"</tbody>"+"</table>";
+		
+		String pagepick="<nav>"
+				+ "<ul class=\"pagination\">"
+				+ "<li>"
+				+ "<a href=\"#\" aria-label=\"Previous\">"
+				+ "<span aria-hidden=\"true\">&laquo;</span>"
+				+ "</a>"
+				+ "</li>"
+				+lis
+				+ "<li>"
+				+ "<a href=\"#\" aria-label=\"Next\">"
+				+ "<span aria-hidden=\"true\">&raquo;</span>"
+				+ "</a>"
+				+ "</li>"
+				+ "</ul>"
+				+ "</nav>";
+		
+		lists +=pagepick;
 		
 
 		return lists;

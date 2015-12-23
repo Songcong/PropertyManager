@@ -16,15 +16,81 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
 
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap-theme.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap.min.css" />
+	
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link rel="stylesheet" href="css/responsive-tables.min.css" type="text/css">
+	
+	<script type="text/javascript"  src="js/jquery-1.11.0.min.js"></script>>
+	<style type="text/css">
+	    /* example demo page styles */
+	    table {
+	        width: 100%;
+	        margin: 1em 0 2em;
+	        font-size: .938em;
+	        border-collapse: collapse;
+	    }
+		body{ 
+			background-color:#ffffff;
+		}
+	    caption {
+	        margin: 1em 0 .7em 0;
+	        text-align: center;
+	        font-weight: bold;
+	        font-size: 120%;
+	        letter-spacing: .5px;
+	        color: #fff;
+	    }
+
+	    th {
+	        text-align:center;
+	        padding: .5em .5em;
+	        font-weight: bold;
+	        border-top: solid 3px #ccc;
+	        border-bottom: solid 1px #ccc;
+	        background: #66677c;
+	    }
+
+	    td {
+	        padding: .5em .5em;
+	        color:#663333;
+	        text-align:center;
+	        border-bottom: solid 1px #ccc;
+	    }
+
+	</style>
+	<script type="text/javascript">
+    function loadp(p){
+    		$('tbody tr').each(function(){
+    		var class = this.attr('class');
+    		
+    		if(class==p)
+    		{
+    			this.show();
+    		}
+    		else{
+    			this.hide();
+    		}
+    	});
+    }
+    
+    function clicks(){
+    	var va= this.val();
+    	loadp(va)
+    }
+    	
+    </script>
   </head>
   
   <body>
-  	<a href="carAssign!add">增加</a>
+  	<a class="glyphicon glyphicon-plus" href="carAssign!add">增加记录</a>
     ${cvm.list}
+    
+    
+    
     
   </body>
 </html>
