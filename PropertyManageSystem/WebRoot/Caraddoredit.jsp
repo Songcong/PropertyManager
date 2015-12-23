@@ -10,6 +10,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<title>car</title>
    <link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap-theme.min.css"/>
 	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/js/jquery-1.11.3.mim.js" />
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/js/jquery.min.js" />
 	<style type="text/css">
 		.carId{
 			display: none;		
@@ -20,7 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
     <form action="${cvm.viewClass.action}" method="post">
 		${cvm.input}
-		<input type="submit" value="提交"/>
+		<input type="submit" class="col-md-1 col-md-offset-1 btn btn-primary" value="提交"/>
     </form>
   </body>
 </html>

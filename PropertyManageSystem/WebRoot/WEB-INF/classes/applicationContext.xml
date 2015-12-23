@@ -26,6 +26,7 @@
 			value="jdbc:mysql://localhost:3306/wygl?characterEncoding=utf-8">
 		</property>
 		<property name="username" value="root"></property>
+		<property name="password" value="root"></property>
 	</bean>
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
