@@ -172,10 +172,10 @@ public class ViewStringSet {
 					 }
 					 if(hide==null){
 					//组装成HTML语句并注入到Viewmodel中
-					str+="<div class='input-group'><label for='" + fieldname + "'class='" + fieldname + "'>"
-							+ label + "</label>" + "<input type='"+type+"' name='"
+					str+="<div class='form-group row'><div class='col-md-offset-1 col-md-1'><label for='" + fieldname + "'class='" + fieldname + "'>"
+							+ label +":"+ "</label></div>" + "<div class='col-md-4'><input type='"+type+"' name='"
 							+table + "."+ fieldname + "' class='form-control " + fieldname + "' value='"
-							+ fieldvalue + "' /></div></br>\n";
+							+ fieldvalue + "' /></div></div></br>\n";
 					 }
 				} catch (IllegalArgumentException | IllegalAccessException e) {
 					// TODO Auto-generated catch block

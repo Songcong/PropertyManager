@@ -21,8 +21,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <form action="${cvm.viewClass.action}" method="post">
+    <div class="row">
+    ${cvm.viewClass.message}
+    </div>
 		${cvm.input}
+		<div class="row">
 		<input type="submit" class="col-md-1 col-md-offset-1 btn btn-primary" value="提交"/>
+		</div>
     </form>
   </body>
 </html>

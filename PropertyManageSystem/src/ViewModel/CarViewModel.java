@@ -18,7 +18,7 @@ public class CarViewModel {
 	public String getList() {
 		return list;
 	}
-
+	
 	public void setList(String list) {
 		this.list = list;
 	}

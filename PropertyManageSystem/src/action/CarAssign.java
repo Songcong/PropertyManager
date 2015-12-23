@@ -58,6 +58,7 @@ public class CarAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="carAction!add";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h1>添加车辆信息</h1><br/></div>";
 		 carViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(car);
