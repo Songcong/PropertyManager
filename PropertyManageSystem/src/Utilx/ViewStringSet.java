@@ -195,6 +195,7 @@ public class ViewStringSet {
 		String trs = "";
 		String lis= "";
 		String tablename="";
+		String select = ""; 
 		int i=1;
 		int p=1;
 		for (Object object : list) {

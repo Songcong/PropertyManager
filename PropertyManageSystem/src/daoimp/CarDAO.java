@@ -119,6 +119,20 @@ public class CarDAO implements ICarDao {
 			throw re;
 		}
 	}
+	public List likeByProperty(String propertyName, Object value) {
+		log.debug("finding Car instance with property: " + propertyName
+				+ ", value: " + value);
+		try {
+			String queryString = "from Car as model where model."
+					+ propertyName + "like ?";
+			Query queryObject = getCurrentSession().createQuery(queryString);
+			queryObject.setParameter(0, value);
+			return queryObject.list();
+		} catch (RuntimeException re) {
+			log.error("find by property name failed", re);
+			throw re;
+		}
+	}
 
 	public List<Car> findByStallId(Object stallId) {
 		return findByProperty(STALL_ID, stallId);
@@ -190,6 +204,8 @@ public class CarDAO implements ICarDao {
 	public static CarDAO getFromApplicationContext(ApplicationContext ctx) {
 		return (CarDAO) ctx.getBean("CarDAO");
 	}
+	
+	
 	public void deletebyid(int id){
 		DBUtil db=new DBUtil();
 		
@@ -197,4 +213,6 @@ public class CarDAO implements ICarDao {
 		db.update(sql);
 		
 	}
+	
+	
 }

@@ -10,4 +10,5 @@ public interface ICarDao {
 	public List findAll();
 	public void deletebyid(int id);
 	public List findByProperty(String propertyName, Object value);
+	public List likeByProperty(String propertyName, Object value);
 }
