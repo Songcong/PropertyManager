@@ -28,6 +28,10 @@ public class CarAssign extends ActionSupport{
 	
 	 private String carId;
 	 
+	 private String propertyName;
+	 
+	 private String value;
+	 
 	 @Resource(name = "carService")
 	private ICarService carService;
 
@@ -48,7 +52,24 @@ public class CarAssign extends ActionSupport{
 	public void setCarId(String carId) {
 		this.carId = carId;
 	}
+	
+	
+	public String getPropertyName() {
+		return propertyName;
+	}
 
+	public void setPropertyName(String propertyName) {
+		this.propertyName = propertyName;
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+	}
+	
 	
 	
 	public String add(){
@@ -103,11 +124,27 @@ public class CarAssign extends ActionSupport{
 		 ViewStringSet viewStringSet = new ViewStringSet();
 			
 			carViewModel.setList(viewStringSet.listSet(list));
+			carViewModel.viewClass.setAdd("<a class=\"glyphicon glyphicon-plus\" href=\"carAssign!add\">增加记录</a>");
 			
 			cvm = carViewModel;
 			
 			
 			return "list";
+	}
+	
+	public String likelist() throws IllegalArgumentException, IllegalAccessException, IntrospectionException{
+		 CarViewModel carViewModel=new CarViewModel();
+		 list = carService.likeByProperty(propertyName, value);
+		 
+		 ViewStringSet viewStringSet = new ViewStringSet();
+			
+			carViewModel.setList(viewStringSet.likelistSet(list));
+			
+			cvm = carViewModel;
+			
+			
+			return "list";
+		 
 	}
 	 
 	 

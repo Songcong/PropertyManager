@@ -7,6 +7,7 @@ public class ViewClass {
 	public String footer;
 	public String action;
 	public String list;
+	public String add;
 	
 	
 	public String getMessage() {
@@ -39,4 +40,12 @@ public class ViewClass {
 	public void setList(String list) {
 		this.list = list;
 	}
+	public String getAdd() {
+		return add;
+	}
+	public void setAdd(String add) {
+		this.add = add;
+	}
+	
+	
 }

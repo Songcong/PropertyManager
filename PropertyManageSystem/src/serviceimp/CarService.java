@@ -32,5 +32,8 @@ public class CarService  implements ICarService{
 	public void deletebyid(int id){
 		carDao.deletebyid(id);
 	}
-	
+	public List likeByProperty(String propertyName,String value){
+	 List list	= carDao.likeByProperty(propertyName, value);
+		return list;
+	}
 }

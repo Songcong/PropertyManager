@@ -124,16 +124,23 @@ public class CarDAO implements ICarDao {
 				+ ", value: " + value);
 		try {
 			String queryString = "from Car as model where model."
-					+ propertyName + "like ?";
+					+ propertyName + " like "+"'%"+value+"%'";
+			System.out.println(queryString);
 			Query queryObject = getCurrentSession().createQuery(queryString);
-			queryObject.setParameter(0, value);
+			//queryObject.setParameter("value","%"+value+"%");
 			return queryObject.list();
 		} catch (RuntimeException re) {
 			log.error("find by property name failed", re);
 			throw re;
 		}
 	}
-
+//	public List likeByProperty(String propertyName, Object value){
+//		String sql="select * from car"+propertyName+"like"+value;
+//		
+//		
+//		
+//	}
+	
 	public List<Car> findByStallId(Object stallId) {
 		return findByProperty(STALL_ID, stallId);
 	}
