@@ -19,13 +19,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
+   <link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap-theme.min.css"/>
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/js/jquery-1.11.3.mim.js" />
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/js/jquery.min.js" />
+	<style type="text/css">
+		.carId{
+			display: none;		
+		}
+	</style>
   </head>
   
   <body>
-    <form action="${cvm.viewClass.action}" method="post">
+ <div class="container-fluid">
+    <form action="${cvm.viewClass.action}" method="post"  class="form-horizontal">
+       <div class="row">
+         ${cvm.viewClass.message}
+       </div>
 		${cvm.input}
-		<input type="submit" value="提交"/>
-    </form> 
+		
+		<div class="form-group">
+            <div class="col-sm-3 col-sm-offset-2">
+                <input class="btn btn-primary" name="btn_submit" type="submit" value="确定">
+            </div>
+        </div>
+
+    </form>
+    </div>
   </body>
 </html>

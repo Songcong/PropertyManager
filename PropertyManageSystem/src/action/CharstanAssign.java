@@ -52,6 +52,7 @@ public class CharstanAssign extends ActionSupport {
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="charstanAction!add";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>添加收费标准信息</h2></div>";
 		 charstanViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(charstan);
@@ -73,6 +74,7 @@ public class CharstanAssign extends ActionSupport {
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="charstanAction!edit";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>编辑收费标准信息</h2></div>";
 		 charstanViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(charstan);

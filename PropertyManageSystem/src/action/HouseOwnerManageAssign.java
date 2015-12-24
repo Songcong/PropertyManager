@@ -51,6 +51,7 @@ public class HouseOwnerManageAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="houseOwnerManageAction!add";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>添加房屋业主管理信息</h2></div>";
 		 houseOwnerManageViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(houseOwnerManage);
@@ -72,6 +73,7 @@ public class HouseOwnerManageAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="houseOwnerManageAction!edit";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>编辑房屋业主管理信息</h2></div>";
 		 houseOwnerManageViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(houseOwnerManage);

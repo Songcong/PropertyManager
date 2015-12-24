@@ -58,6 +58,7 @@ public class FitmentAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="fitmentAction!add";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>添加房屋装修信息</h2></div>";
 		 fitmentViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(fitment);
@@ -79,6 +80,7 @@ public class FitmentAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="fitmentAction!edit";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>编辑房屋装修信息</h2></div>";
 		 fitmentViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(fitment);

@@ -51,6 +51,7 @@ public class OfforestAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="offorestAction!add";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>添加小区绿化信息</h2></div>";
 		 offorestViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(offorest);
@@ -72,6 +73,7 @@ public class OfforestAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="offorestAction!edit";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>编辑小区绿化信息</h2></div>";
 		 offorestViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(offorest);

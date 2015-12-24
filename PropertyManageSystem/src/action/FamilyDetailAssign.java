@@ -59,6 +59,7 @@ public class FamilyDetailAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="familyDetailAction!add";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>添加家庭详细信息</h2></div>";
 		 familyDetailViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(familyDetail);
@@ -80,6 +81,7 @@ public class FamilyDetailAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="familyDetailAction!edit";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>编辑家庭详细信息</h2></div>";
 		 familyDetailViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(familyDetail);

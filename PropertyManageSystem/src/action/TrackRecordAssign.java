@@ -51,6 +51,7 @@ public class TrackRecordAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="trackRecordAction!add";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>添加业绩记录信息</h2></div>";
 		 trackRecordViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(trackRecord);
@@ -72,6 +73,7 @@ public class TrackRecordAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="trackRecordAction!edit";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>编辑业绩记录信息</h2></div>";
 		 trackRecordViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(trackRecord);

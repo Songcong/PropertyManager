@@ -61,6 +61,7 @@ import com.opensymphony.xwork2.ActionSupport;
 			
 			ViewClass vc=new ViewClass();
 			 vc.action="carmanageAction!add";
+			 vc.message="<div class='col-md-6 col-md-offset-1'><h2>添加车辆管理信息</h2></div>";
 			 carmanageViewModel.viewClass=vc;
 			
 			ViewStringSet viewStringSet = new ViewStringSet(carmanage);
@@ -82,6 +83,7 @@ import com.opensymphony.xwork2.ActionSupport;
 			
 			ViewClass vc=new ViewClass();
 			 vc.action="carmanageAction!edit";
+			 vc.message="<div class='col-md-6 col-md-offset-1'><h2>编辑车辆管理信息</h2></div>";
 			 carmanageViewModel.viewClass=vc;
 			
 			ViewStringSet viewStringSet = new ViewStringSet(carmanagemanage);

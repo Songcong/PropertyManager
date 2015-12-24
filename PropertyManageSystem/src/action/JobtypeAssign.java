@@ -58,6 +58,7 @@ public class JobtypeAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="jobtypeAction!add";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>添加岗位类型信息</h2></div>";
 		 jobtypeViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(jobtype);
@@ -79,6 +80,7 @@ public class JobtypeAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="jobtypeAction!edit";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>编辑岗位类型信息</h2></div>";
 		 jobtypeViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(jobtype);

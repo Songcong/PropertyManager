@@ -60,6 +60,7 @@ public class ExpensetypeAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="expensetypeAction!add";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>添加收费种类信息</h2></div>";
 		 expensetypeViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(expensetype);
@@ -81,6 +82,7 @@ public class ExpensetypeAssign extends ActionSupport{
 		
 		ViewClass vc=new ViewClass();
 		 vc.action="expensetypeAction!edit";
+		 vc.message="<div class='col-md-6 col-md-offset-1'><h2>编辑收费种类信息</h2></div>";
 		 expensetypeViewModel.viewClass=vc;
 		
 		ViewStringSet viewStringSet = new ViewStringSet(expensetype);
