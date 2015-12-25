@@ -29,7 +29,7 @@ public class DBUtil {
 		//鏁版嵁搴撳悕
 		private String username="root";
 		//鏁版嵁搴撳瘑鐮�
-		private String password="";
+		private String password="root";
 		//Connection杩炴帴瀵硅薄
 		private Connection connection=null;
 		//Statement璇彞瀵硅薄
